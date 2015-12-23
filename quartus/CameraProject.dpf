@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pin_planner>
+	<pin_info>
+		<pin name="LED_GREEN0" source="Pin Planner" >
+		</pin>
+		<pin name="LED_GREEN1" source="Pin Planner" >
+		</pin>
+		<pin name="LED_GREEN2" source="Pin Planner" >
+		</pin>
+		<pin name="LED_GREEN3" source="Pin Planner" >
+		</pin>
+		<pin name="LED_GREEN4" source="Pin Planner" >
+		</pin>
+		<pin name="LED_GREEN5" source="Pin Planner" >
+		</pin>
+		<pin name="LED_GREEN6" source="Pin Planner" >
+		</pin>
+		<pin name="LED_GREEN7" source="Pin Planner" >
+		</pin>
+		<pin name="KEY_N0" source="Pin Planner" >
+		</pin>
+		<pin name="KEY_N1" source="Pin Planner" >
+		</pin>
+		<pin name="SW0" source="Pin Planner" >
+		</pin>
+		<pin name="SW1" source="Pin Planner" >
+		</pin>
+		<pin name="SW2" source="Pin Planner" >
+		</pin>
+		<pin name="SW3" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_BA0" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_BA1" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQM0" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQM1" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ0" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ1" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ2" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ3" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ4" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ5" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ6" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ7" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ8" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ9" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ10" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ11" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ12" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ13" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ14" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_DQ15" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_ADDR0" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_ADDR1" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_ADDR2" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_ADDR3" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_ADDR4" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_ADDR5" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_ADDR6" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_ADDR7" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_ADDR8" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_ADDR9" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_ADDR10" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_ADDR11" source="Pin Planner" >
+		</pin>
+		<pin name="DRAM_ADDR12" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D0" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D1" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D2" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D3" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D4" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D5" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D6" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D7" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D8" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D9" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D10" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D11" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D12" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D_IN0" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D_IN1" source="Pin Planner" >
+		</pin>
+		<pin name="GPIO_2_D_IN2" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_C_N0" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_C_N1" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_C_N2" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_C_N3" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_C_N4" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_C_N5" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_C_N6" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_C_N7" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_C_N8" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_C_N9" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_C_N10" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_C_N11" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_A0" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_A1" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_A2" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_A3" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_A4" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_A5" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_A6" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_A7" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_B0" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_B1" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_B2" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_B3" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_B4" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_B5" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_B6" source="Pin Planner" >
+		</pin>
+		<pin name="SW_LED_B7" source="Pin Planner" >
+		</pin>
+		<pin name="BUTTON_N0" source="Pin Planner" >
+		</pin>
+		<pin name="BUTTON_N1" source="Pin Planner" >
+		</pin>
+		<pin name="BUTTON_N2" source="Pin Planner" >
+		</pin>
+		<pin name="BUTTON_N3" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_R0" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_R1" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_R2" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_R3" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_R4" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_R5" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_R6" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_R7" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_G0" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_G1" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_G2" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_G3" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_G4" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_G5" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_G6" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_G7" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_B0" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_B1" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_B2" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_B3" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_B4" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_B5" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_B6" source="Pin Planner" >
+		</pin>
+		<pin name="LED_SEL_B7" source="Pin Planner" >
+		</pin>
+		<pin name="LED_BUTTON0" source="Pin Planner" >
+		</pin>
+		<pin name="LED_BUTTON1" source="Pin Planner" >
+		</pin>
+		<pin name="LED_BUTTON2" source="Pin Planner" >
+		</pin>
+		<pin name="LED_BUTTON3" source="Pin Planner" >
+		</pin>
+		<pin name="MSEL0" source="Pin Planner" >
+		</pin>
+		<pin name="MSEL1" source="Pin Planner" >
+		</pin>
+		<pin name="MSEL2" source="Pin Planner" >
+		</pin>
+		<pin name="nCE" source="Pin Planner" >
+		</pin>
+		<pin name="nCONFIG" source="Pin Planner" >
+		</pin>
+		<pin name="nSTATUS" source="Pin Planner" >
+		</pin>
+		<pin name="CONF_DONE" source="Pin Planner" >
+		</pin>
+		<pin name="TCK" source="Pin Planner" >
+		</pin>
+		<pin name="TDI" source="Pin Planner" >
+		</pin>
+		<pin name="TDO" source="Pin Planner" >
+		</pin>
+		<pin name="TMS" source="Pin Planner" >
+		</pin>
+	</pin_info>
+	<buses>
+	</buses>
+	<group_file_association>
+	</group_file_association>
+	<pin_planner_file_specifies>
+	</pin_planner_file_specifies>
+</pin_planner>

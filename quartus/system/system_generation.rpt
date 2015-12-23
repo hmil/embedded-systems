@@ -1,0 +1,145 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /data/workspace/ES/lab03/quartus/system.qsys --block-symbol-file --output-directory=/data/workspace/ES/lab03/quartus/system --family="Cyclone IV E" --part=EP4CE22F17C6
+Progress: Loading quartus/system.qsys
+Progress: Reading input file
+Progress: Adding camera_controller_0 [camera_controller 1.0]
+Progress: Parameterizing module camera_controller_0
+Progress: Adding clk [clock_source 15.0]
+Progress: Parameterizing module clk
+Progress: Adding clocks [altera_up_avalon_sys_sdram_pll 15.0]
+Progress: Parameterizing module clocks
+Progress: Adding cmos_sensor_output_generator_0 [cmos_sensor_output_generator 14.0]
+Progress: Parameterizing module cmos_sensor_output_generator_0
+Progress: Adding i2c_0 [i2c 14.0]
+Progress: Parameterizing module i2c_0
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 15.0]
+Progress: Parameterizing module jtag_uart
+Progress: Adding nios2 [altera_nios2_qsys 15.0]
+Progress: Parameterizing module nios2
+Progress: Adding sdram [altera_avalon_new_sdram_controller 15.0]
+Progress: Parameterizing module sdram
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: system.nios2: Nios II Classic cores are now superseded by improved Gen 2 cores.
+Warning: system.camera_controller_0.avalon_master/cmos_sensor_output_generator_0.avalon_slave: cmos_sensor_output_generator_0.avalon_slave does not have byteenables. Writes from narrow master camera_controller_0.avalon_master may result in data corruption.
+Warning: system.i2c_0: Interrupt sender i2c_0.interrupt_sender is not connected to an interrupt receiver
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /data/workspace/ES/lab03/quartus/system.qsys --synthesis=VHDL --output-directory=/data/workspace/ES/lab03/quartus/system/synthesis --family="Cyclone IV E" --part=EP4CE22F17C6
+Progress: Loading quartus/system.qsys
+Progress: Reading input file
+Progress: Adding camera_controller_0 [camera_controller 1.0]
+Progress: Parameterizing module camera_controller_0
+Progress: Adding clk [clock_source 15.0]
+Progress: Parameterizing module clk
+Progress: Adding clocks [altera_up_avalon_sys_sdram_pll 15.0]
+Progress: Parameterizing module clocks
+Progress: Adding cmos_sensor_output_generator_0 [cmos_sensor_output_generator 14.0]
+Progress: Parameterizing module cmos_sensor_output_generator_0
+Progress: Adding i2c_0 [i2c 14.0]
+Progress: Parameterizing module i2c_0
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 15.0]
+Progress: Parameterizing module jtag_uart
+Progress: Adding nios2 [altera_nios2_qsys 15.0]
+Progress: Parameterizing module nios2
+Progress: Adding sdram [altera_avalon_new_sdram_controller 15.0]
+Progress: Parameterizing module sdram
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: system.nios2: Nios II Classic cores are now superseded by improved Gen 2 cores.
+Warning: system.camera_controller_0.avalon_master/cmos_sensor_output_generator_0.avalon_slave: cmos_sensor_output_generator_0.avalon_slave does not have byteenables. Writes from narrow master camera_controller_0.avalon_master may result in data corruption.
+Warning: system.i2c_0: Interrupt sender i2c_0.interrupt_sender is not connected to an interrupt receiver
+Info: system: Generating system "system" for QUARTUS_SYNTH
+Info: camera_controller_0: "system" instantiated camera_controller "camera_controller_0"
+Info: clocks: "system" instantiated altera_up_avalon_sys_sdram_pll "clocks"
+Info: cmos_sensor_output_generator_0: "system" instantiated cmos_sensor_output_generator "cmos_sensor_output_generator_0"
+Info: i2c_0: "system" instantiated i2c "i2c_0"
+Info: jtag_uart: Starting RTL generation for module 'system_jtag_uart'
+Info: jtag_uart:   Generation command is [exec /home/hadrien/altera/15.0/quartus/linux64/perl/bin/perl -I /home/hadrien/altera/15.0/quartus/linux64/perl/lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/europa -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin -I /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=system_jtag_uart --dir=/tmp/alt6780_44695731026454923.dir/0174_jtag_uart_gen/ --quartus_dir=/home/hadrien/altera/15.0/quartus --verilog --config=/tmp/alt6780_44695731026454923.dir/0174_jtag_uart_gen//system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart: Done RTL generation for module 'system_jtag_uart'
+Info: jtag_uart: "system" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: nios2: Starting RTL generation for module 'system_nios2'
+Info: nios2:   Generation command is [exec /home/hadrien/altera/15.0/quartus/linux64/eperlcmd -I /home/hadrien/altera/15.0/quartus/linux64/perl/lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/europa -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin -I /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2 -I /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2 -- /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=system_nios2 --dir=/tmp/alt6780_44695731026454923.dir/0175_nios2_gen/ --quartus_bindir=/home/hadrien/altera/15.0/quartus/linux64 --verilog --config=/tmp/alt6780_44695731026454923.dir/0175_nios2_gen//system_nios2_processor_configuration.pl  --do_build_sim=0  ]
+Info: nios2: # 2015.12.11 09:19:09 (*) Starting Nios II generation
+Info: nios2: # 2015.12.11 09:19:09 (*)   Checking for plaintext license.
+Info: nios2: # 2015.12.11 09:19:11 (*)   Plaintext license not found.
+Info: nios2: # 2015.12.11 09:19:11 (*)   Checking for encrypted license (non-evaluation).
+Info: nios2: # 2015.12.11 09:19:13 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
+Info: nios2: # 2015.12.11 09:19:13 (*)   Elaborating CPU configuration settings
+Info: nios2: # 2015.12.11 09:19:13 (*)   Creating all objects for CPU
+Info: nios2: # 2015.12.11 09:19:14 (*)     Pipeline frontend
+Info: nios2: # 2015.12.11 09:19:16 (*)   Generating RTL from CPU objects
+Info: nios2: # 2015.12.11 09:19:18 (*)   Creating encrypted RTL
+Info: nios2: # 2015.12.11 09:19:18 (*) Done Nios II generation
+Info: nios2: Done RTL generation for module 'system_nios2'
+Info: nios2: "system" instantiated altera_nios2_qsys "nios2"
+Info: sdram: Starting RTL generation for module 'system_sdram'
+Info: sdram:   Generation command is [exec /home/hadrien/altera/15.0/quartus/linux64/perl/bin/perl -I /home/hadrien/altera/15.0/quartus/linux64/perl/lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/europa -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin -I /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=system_sdram --dir=/tmp/alt6780_44695731026454923.dir/0176_sdram_gen/ --quartus_dir=/home/hadrien/altera/15.0/quartus --verilog --config=/tmp/alt6780_44695731026454923.dir/0176_sdram_gen//system_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram: Done RTL generation for module 'system_sdram'
+Info: sdram: "system" instantiated altera_avalon_new_sdram_controller "sdram"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "system" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "system" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "system" instantiated altera_reset_controller "rst_controller"
+Info: sys_pll: "clocks" instantiated altera_up_altpll "sys_pll"
+Info: reset_from_locked: "clocks" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
+Info: camera_controller_0_avalon_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "camera_controller_0_avalon_master_translator"
+Info: cmos_sensor_output_generator_0_avalon_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "cmos_sensor_output_generator_0_avalon_slave_translator"
+Info: camera_controller_0_avalon_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "camera_controller_0_avalon_master_agent"
+Info: cmos_sensor_output_generator_0_avalon_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "cmos_sensor_output_generator_0_avalon_slave_agent"
+Info: cmos_sensor_output_generator_0_avalon_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "cmos_sensor_output_generator_0_avalon_slave_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
+Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
+Info: router_006: "mm_interconnect_0" instantiated altera_merlin_router "router_006"
+Info: router_007: "mm_interconnect_0" instantiated altera_merlin_router "router_007"
+Info: camera_controller_0_avalon_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "camera_controller_0_avalon_master_limiter"
+Info: Reusing file /data/workspace/ES/lab03/quartus/system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: cmos_sensor_output_generator_0_avalon_slave_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "cmos_sensor_output_generator_0_avalon_slave_burst_adapter"
+Info: Reusing file /data/workspace/ES/lab03/quartus/system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
+Info: Reusing file /data/workspace/ES/lab03/quartus/system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
+Info: Reusing file /data/workspace/ES/lab03/quartus/system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: cmd_mux_004: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_004"
+Info: Reusing file /data/workspace/ES/lab03/quartus/system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
+Info: rsp_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_002"
+Info: rsp_demux_004: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_004"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /data/workspace/ES/lab03/quartus/system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file /data/workspace/ES/lab03/quartus/system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
+Info: Reusing file /data/workspace/ES/lab03/quartus/system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: camera_controller_0_avalon_master_to_cmos_sensor_output_generator_0_avalon_slave_cmd_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "camera_controller_0_avalon_master_to_cmos_sensor_output_generator_0_avalon_slave_cmd_width_adapter"
+Info: Reusing file /data/workspace/ES/lab03/quartus/system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file /data/workspace/ES/lab03/quartus/system/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: avalon_st_adapter_001: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
+Info: avalon_st_adapter_004: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_004"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter_004" instantiated error_adapter "error_adapter_0"
+Info: system: Done "system" with 49 modules, 82 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

@@ -1,0 +1,23 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY example_fpga4u IS
+      PORT(    CLOCK        :IN std_logic;
+               LED_BUTTON0   :OUT std_logic);
+END example_fpga4u;
+
+ARCHITECTURE a OF example_fpga4u IS
+
+	component example is
+		port (
+			clk_clk          : in  std_logic := 'X'; -- clk
+			pwm_line_pwmLine : out std_logic         -- pwmLine
+		);
+	end component example;
+
+	--SIGNAL w_reg, x_reg, y_reg, z_reg   :std_logic;
+
+BEGIN
+	u0       : example PORT MAP (clk_clk => CLOCK, pwm_line_pwmLine => LED_BUTTON0);
+
+END a;

@@ -1,0 +1,21 @@
+API definition
+==============
+
+Registers:
+ - CTL[irq, ien, fwidth, fheight, resolution(enum), cap_en]
+ - BUFF_START(x16)
+ - BUFF_COUNT
+ - CURRENT_WR_BUFF(x16)
+ - CURRENT_RD_BUFF(x16)
+
+"Hardware lines":
+ - sp_out / sp_in:
+
+ sp_out: ______/```````````\______________/```````````````\_____________
+ sp_in:  ________/````````````\________/````````````````\_______________
+            read_ok        (ack)     read_done         (ack)
+
+ read_ok = the camera has available frame at CURRENT_RD_BUFF (CURRENT_RD_BUFF is incremented before the rising edge on sp_out)
+ read_done  = the consumer has finished reading CURRENT_RD_BUFF
+
+State machine:

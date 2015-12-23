@@ -1,0 +1,478 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/data/workspace/ES/lab03
+Ecameracontroller
+Z0 w1450437540
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 d/data/workspace/ES/lab03/CameraController/sim
+Z5 8/data/workspace/ES/lab03/CameraController/CameraController.vhd
+Z6 F/data/workspace/ES/lab03/CameraController/CameraController.vhd
+l0
+L5
+V9U1hfXEaE_Zm<nW41mALS2
+!s100 X3LQ;cRZQAUL<OdJQimMD3
+Z7 OV;C;10.3d;59
+32
+Z8 !s110 1450437570
+!i10b 1
+Z9 !s108 1450437570.538440
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/data/workspace/ES/lab03/CameraController/CameraController.vhd|
+Z11 !s107 /data/workspace/ES/lab03/CameraController/CameraController.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1
+Acomp
+R1
+R2
+R3
+Z14 DEx4 work 16 cameracontroller 0 22 9U1hfXEaE_Zm<nW41mALS2
+l132
+L40
+Vz?500ELTB66^?@@llVz6L0
+!s100 @Okj9Xk0H_eKlfeHVVKT00
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Pcctrl_constants
+w1448809203
+R4
+8/data/workspace/ES/lab03/CameraController/CameraController_constants.vhd
+F/data/workspace/ES/lab03/CameraController/CameraController_constants.vhd
+l0
+L1
+Vkle@?U`^JbJFSX@:mblFS1
+!s100 n1H=eBbzV5]]CDVUZ`N8j3
+R7
+32
+R8
+!i10b 1
+!s108 1450437570.926351
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/data/workspace/ES/lab03/CameraController/CameraController_constants.vhd|
+!s107 /data/workspace/ES/lab03/CameraController/CameraController_constants.vhd|
+!i113 1
+R12
+R13
+Ecctrl_core
+Z15 w1450437597
+R1
+R2
+R3
+R4
+Z16 8/data/workspace/ES/lab03/CameraController/cctrl_core.vhd
+Z17 F/data/workspace/ES/lab03/CameraController/cctrl_core.vhd
+l0
+L5
+V;]a>42ci^RW`Ih9U>kOo`2
+!s100 l>[Q9flXoUo0=K2IlWVFg0
+R7
+32
+Z18 !s110 1450437601
+!i10b 1
+Z19 !s108 1450437601.579530
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/data/workspace/ES/lab03/CameraController/cctrl_core.vhd|
+Z21 !s107 /data/workspace/ES/lab03/CameraController/cctrl_core.vhd|
+!i113 1
+R12
+R13
+Aarch
+R1
+R2
+R3
+DEx4 work 10 cctrl_core 0 22 ;]a>42ci^RW`Ih9U>kOo`2
+l91
+L30
+VjCbgnfH?k8m`ZSW93AeiR1
+!s100 I4OP>VOI6zF?aJT8HFKX]0
+R7
+32
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 1
+R12
+R13
+Ecctrl_master
+Z22 w1450436078
+R1
+R2
+R3
+R4
+Z23 8/data/workspace/ES/lab03/CameraController/cctrl_master.vhd
+Z24 F/data/workspace/ES/lab03/CameraController/cctrl_master.vhd
+l0
+L5
+V>h]ajQb3O;SS8bN6ZOgDe3
+!s100 jkQF_XKId1eY;6AEU]7d13
+R7
+32
+R8
+!i10b 1
+Z25 !s108 1450437570.652308
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/data/workspace/ES/lab03/CameraController/cctrl_master.vhd|
+Z27 !s107 /data/workspace/ES/lab03/CameraController/cctrl_master.vhd|
+!i113 1
+R12
+R13
+Acctrl_master
+R1
+R2
+R3
+DEx4 work 12 cctrl_master 0 22 >h]ajQb3O;SS8bN6ZOgDe3
+l59
+L40
+Ve=5EUg1L3>3@oB6eHahA:2
+!s100 Y8OS>hcT[FiQzG3GejbDT2
+R7
+32
+R8
+!i10b 1
+R25
+R26
+R27
+!i113 1
+R12
+R13
+Ecctrl_slave
+Z28 w1450436740
+R1
+R2
+R3
+R4
+Z29 8/data/workspace/ES/lab03/CameraController/cctrl_slave.vhd
+Z30 F/data/workspace/ES/lab03/CameraController/cctrl_slave.vhd
+l0
+L5
+V6jDNi@Ea=mMZhzjnSTEca3
+!s100 k[f:]W@3zO[]hDlA3eX:W0
+R7
+32
+R8
+!i10b 1
+Z31 !s108 1450437570.749034
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/data/workspace/ES/lab03/CameraController/cctrl_slave.vhd|
+Z33 !s107 /data/workspace/ES/lab03/CameraController/cctrl_slave.vhd|
+!i113 1
+R12
+R13
+Acomp
+R1
+R2
+R3
+DEx4 work 11 cctrl_slave 0 22 6jDNi@Ea=mMZhzjnSTEca3
+l44
+L34
+VZ4G4LMYBOF7F12o;G=<?]1
+!s100 WYkjfgVW0lFfH3NnG[G6i0
+R7
+32
+R8
+!i10b 1
+R31
+R32
+R33
+!i113 1
+R12
+R13
+Ecmos_sensor_output_generator
+Z34 w1448370526
+Z35 DPx4 work 15 conversion_util 0 22 Mc_?kjlIfnZzL;6OaAHa>3
+Z36 DPx4 work 38 cmos_sensor_output_generator_constants 0 22 zWcz`CHz<FD2Ko3RDHzlj2
+R1
+R2
+R3
+R4
+Z37 8/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator.vhd
+Z38 F/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator.vhd
+l0
+L8
+Vld@b=aIO5EaG6_b[T4=^11
+!s100 THA3O:3JeEh6@aPgHn_LY0
+R7
+32
+Z39 !s110 1450437571
+!i10b 1
+Z40 !s108 1450437571.058450
+Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator.vhd|
+Z42 !s107 /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator.vhd|
+!i113 1
+R12
+R13
+Artl
+Z43 DEx4 work 35 cmos_sensor_output_generator_random 0 22 lIZBEXmgJ17JUgjRcUk<L2
+R35
+R36
+R1
+R2
+R3
+Z44 DEx4 work 28 cmos_sensor_output_generator 0 22 ld@b=aIO5EaG6_b[T4=^11
+l58
+L29
+Ve`RR@3_1HcBESO_V>KcPn2
+!s100 YZz;4fFDWn6zjo?jR=W:I1
+R7
+32
+R39
+!i10b 1
+R40
+R41
+R42
+!i113 1
+R12
+R13
+Pcmos_sensor_output_generator_constants
+w1448334832
+R4
+8/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator_constants.vhd
+F/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator_constants.vhd
+l0
+L1
+VzWcz`CHz<FD2Ko3RDHzlj2
+!s100 14`LVIh^PbHk9KTUYookH2
+R7
+32
+R39
+!i10b 1
+!s108 1450437571.148799
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator_constants.vhd|
+!s107 /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator_constants.vhd|
+!i113 1
+R12
+R13
+Ecmos_sensor_output_generator_random
+Z45 w1448334838
+R2
+R3
+R4
+Z46 8/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator_random.vhd
+Z47 F/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator_random.vhd
+l0
+L6
+VlIZBEXmgJ17JUgjRcUk<L2
+!s100 [FO9I6IOYB4XGCLhcP8e11
+R7
+32
+R39
+!i10b 1
+Z48 !s108 1450437571.209650
+Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator_random.vhd|
+Z50 !s107 /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator_random.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+R43
+l15
+L14
+V?z;1DJMfzUz=mg4eZMDL`0
+!s100 0NZP9AL03]TJN<j14H8hH1
+R7
+32
+R39
+!i10b 1
+R48
+R49
+R50
+!i113 1
+R12
+R13
+Pconversion_util
+R1
+R2
+R3
+Z51 w1448213768
+R4
+Z52 8/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/conversion_util.vhd
+Z53 F/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/conversion_util.vhd
+l0
+L5
+VMc_?kjlIfnZzL;6OaAHa>3
+!s100 5A=ggEhDVh2Wb6DFXb@zo3
+R7
+32
+b1
+R39
+!i10b 1
+Z54 !s108 1450437571.356385
+Z55 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/conversion_util.vhd|
+Z56 !s107 /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/conversion_util.vhd|
+!i113 1
+R12
+R13
+Bbody
+R35
+R1
+R2
+R3
+l0
+L13
+Vc7KThJmQVV?zSZGn[=67n3
+!s100 ]IMFkoYGiU@P@k8db;69:2
+R7
+32
+R39
+!i10b 1
+R54
+R55
+R56
+!i113 1
+R12
+R13
+nbody
+Etb_cctrl
+Z57 w1450430735
+R36
+Z58 DPx4 work 15 cctrl_constants 0 22 kle@?U`^JbJFSX@:mblFS1
+R1
+R2
+R3
+R4
+Z59 8/data/workspace/ES/lab03/CameraController/sim/tb_cctrl.vhd
+Z60 F/data/workspace/ES/lab03/CameraController/sim/tb_cctrl.vhd
+l0
+L15
+VkTU9X:PnVbTEF9QSNh73`3
+!s100 F3m:klGM0gzA5Y<@XTYPd2
+R7
+32
+R8
+!i10b 1
+Z61 !s108 1450437570.843150
+Z62 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/data/workspace/ES/lab03/CameraController/sim/tb_cctrl.vhd|
+Z63 !s107 /data/workspace/ES/lab03/CameraController/sim/tb_cctrl.vhd|
+!i113 1
+R12
+R13
+Atest
+R35
+R44
+R14
+R36
+R58
+R1
+R2
+R3
+DEx4 work 8 tb_cctrl 0 22 kTU9X:PnVbTEF9QSNh73`3
+l74
+L18
+V=?Ha=RY25?6=YoHlhXF:l1
+!s100 j@M^i4CTGZfiJ08YS4Db^0
+R7
+32
+R8
+!i10b 1
+R61
+R62
+R63
+!i113 1
+R12
+R13
+Etb_cctrl_core
+Z64 w1449665261
+R58
+R1
+R2
+R3
+R4
+Z65 8/data/workspace/ES/lab03/CameraController/sim/tb_cctrl_core.vhd
+Z66 F/data/workspace/ES/lab03/CameraController/sim/tb_cctrl_core.vhd
+l0
+L7
+VUC6gSJYG9j4:8XWL@lg<[1
+!s100 _UdVCkH[nL:anXG0IjKh<3
+R7
+32
+Z67 !s110 1449831164
+!i10b 1
+Z68 !s108 1449831164.133130
+Z69 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/data/workspace/ES/lab03/CameraController/sim/tb_cctrl_core.vhd|
+Z70 !s107 /data/workspace/ES/lab03/CameraController/sim/tb_cctrl_core.vhd|
+!i113 1
+R12
+R13
+Atest
+Z71 DEx4 work 10 cctrl_core 0 22 CJVgzg30cST0MMAHbFmmf3
+R58
+R1
+R2
+R3
+DEx4 work 13 tb_cctrl_core 0 22 UC6gSJYG9j4:8XWL@lg<[1
+l29
+L10
+VL@CCZ::G=ji=Sm@_RVD:l1
+!s100 Cj0VUDE9B>hiE?:6ejc;K3
+R7
+32
+R67
+!i10b 1
+R68
+R69
+R70
+!i113 1
+R12
+R13
+Etb_cmos_sensor_output_generator
+Z72 w1448370454
+R35
+R36
+R1
+R2
+R3
+R4
+Z73 8/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/tb/tb_cmos_sensor_output_generator.vhd
+Z74 F/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/tb/tb_cmos_sensor_output_generator.vhd
+l0
+L8
+V[GU:6a<FXk87HH;cY]<aO1
+!s100 H=Nkf@AB`oNVi^O31H4dD2
+R7
+32
+R39
+!i10b 1
+Z75 !s108 1450437571.273604
+Z76 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/tb/tb_cmos_sensor_output_generator.vhd|
+Z77 !s107 /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/tb/tb_cmos_sensor_output_generator.vhd|
+!i113 1
+R12
+R13
+Atest
+R44
+R35
+R36
+R1
+R2
+R3
+DEx4 work 31 tb_cmos_sensor_output_generator 0 22 [GU:6a<FXk87HH;cY]<aO1
+l40
+L11
+V<K^TIIQPeU@WVJmD<T6]02
+!s100 dhkL:3CM7E=Vf3X@RG:671
+R7
+32
+R39
+!i10b 1
+R75
+R76
+R77
+!i113 1
+R12
+R13
