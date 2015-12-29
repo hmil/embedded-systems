@@ -1,13 +1,4 @@
-/data/workspace/ES/lab03/CameraController/cctrl_slave.vhd {1 {vcom -work work -2002 -explicit -stats=none /data/workspace/ES/lab03/CameraController/cctrl_slave.vhd
-Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity cctrl_slave
--- Compiling architecture comp of cctrl_slave
-
-} {} {}} /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator.vhd {1 {vcom -work work -2002 -explicit -stats=none /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator.vhd
+/data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator.vhd {1 {vcom -work work -2002 -explicit -stats=none /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator.vhd
 Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -19,10 +10,10 @@ Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
 -- Compiling architecture rtl of cmos_sensor_output_generator
 -- Loading entity cmos_sensor_output_generator_random
 
-} {} {}} /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator_constants.vhd {1 {vcom -work work -2002 -explicit -stats=none /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator_constants.vhd
+} {} {}} /data/workspace/ES/lab03/CameraController/CameraController_constants.vhd {1 {vcom -work work -2002 -explicit -stats=none /data/workspace/ES/lab03/CameraController/CameraController_constants.vhd
 Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
 -- Loading package STANDARD
--- Compiling package cmos_sensor_output_generator_constants
+-- Compiling package cctrl_constants
 
 } {} {}} /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator_random.vhd {1 {vcom -work work -2002 -explicit -stats=none /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator_random.vhd
 Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
@@ -31,15 +22,6 @@ Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
 -- Loading package std_logic_1164
 -- Compiling entity cmos_sensor_output_generator_random
 -- Compiling architecture behavioral of cmos_sensor_output_generator_random
-
-} {} {}} /data/workspace/ES/lab03/CameraController/cctrl_master.vhd {1 {vcom -work work -2002 -explicit -stats=none /data/workspace/ES/lab03/CameraController/cctrl_master.vhd
-Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity cctrl_master
--- Compiling architecture cctrl_master of cctrl_master
 
 } {} {}} /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/conversion_util.vhd {1 {vcom -work work -2002 -explicit -stats=none /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/conversion_util.vhd
 Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
@@ -51,19 +33,14 @@ Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
 -- Compiling package body conversion_util
 -- Loading package conversion_util
 
-} {} {}} /data/workspace/ES/lab03/CameraController/CameraController.vhd {1 {vcom -work work -2002 -explicit -stats=none /data/workspace/ES/lab03/CameraController/CameraController.vhd
+} {} {}} /data/workspace/ES/lab03/CameraController/cctrl_core.vhd {1 {vcom -work work -2002 -explicit -stats=none /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
 Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling entity CameraController
--- Compiling architecture comp of CameraController
-
-} {} {}} /data/workspace/ES/lab03/CameraController/CameraController_constants.vhd {1 {vcom -work work -2002 -explicit -stats=none /data/workspace/ES/lab03/CameraController/CameraController_constants.vhd
-Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
--- Loading package STANDARD
--- Compiling package cctrl_constants
+-- Compiling entity cctrl_core
+-- Compiling architecture arch of cctrl_core
 
 } {} {}} /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/tb/tb_cmos_sensor_output_generator.vhd {1 {vcom -work work -2002 -explicit -stats=none /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/tb/tb_cmos_sensor_output_generator.vhd
 Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
@@ -75,6 +52,25 @@ Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
 -- Loading package conversion_util
 -- Compiling entity tb_cmos_sensor_output_generator
 -- Compiling architecture test of tb_cmos_sensor_output_generator
+-- Loading entity cmos_sensor_output_generator
+
+} {} {}} /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator_constants.vhd {1 {vcom -work work -2002 -explicit -stats=none /data/workspace/ES/lab03/cmos_sensor_output_generator_sample_design/cmos_sensor_output_generator/hdl/cmos_sensor_output_generator_constants.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Compiling package cmos_sensor_output_generator_constants
+
+} {} {}} /data/workspace/ES/lab03/CameraController/sim/tb_cctrl.vhd {1 {vcom -work work -2002 -explicit -stats=none /data/workspace/ES/lab03/CameraController/sim/tb_cctrl.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package cctrl_constants
+-- Loading package cmos_sensor_output_generator_constants
+-- Compiling entity tb_cctrl
+-- Compiling architecture test of tb_cctrl
+-- Loading entity CameraController
+-- Loading package conversion_util
 -- Loading entity cmos_sensor_output_generator
 
 } {} {}}

@@ -61,26 +61,26 @@ Info: clocks: "system" instantiated altera_up_avalon_sys_sdram_pll "clocks"
 Info: cmos_sensor_output_generator_0: "system" instantiated cmos_sensor_output_generator "cmos_sensor_output_generator_0"
 Info: i2c_0: "system" instantiated i2c "i2c_0"
 Info: jtag_uart: Starting RTL generation for module 'system_jtag_uart'
-Info: jtag_uart:   Generation command is [exec /home/hadrien/altera/15.0/quartus/linux64/perl/bin/perl -I /home/hadrien/altera/15.0/quartus/linux64/perl/lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/europa -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin -I /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=system_jtag_uart --dir=/tmp/alt6780_44695731026454923.dir/0174_jtag_uart_gen/ --quartus_dir=/home/hadrien/altera/15.0/quartus --verilog --config=/tmp/alt6780_44695731026454923.dir/0174_jtag_uart_gen//system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart:   Generation command is [exec /home/hadrien/altera/15.0/quartus/linux64/perl/bin/perl -I /home/hadrien/altera/15.0/quartus/linux64/perl/lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/europa -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin -I /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=system_jtag_uart --dir=/tmp/alt6793_1169817767641933118.dir/0005_jtag_uart_gen/ --quartus_dir=/home/hadrien/altera/15.0/quartus --verilog --config=/tmp/alt6793_1169817767641933118.dir/0005_jtag_uart_gen//system_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart: Done RTL generation for module 'system_jtag_uart'
 Info: jtag_uart: "system" instantiated altera_avalon_jtag_uart "jtag_uart"
 Info: nios2: Starting RTL generation for module 'system_nios2'
-Info: nios2:   Generation command is [exec /home/hadrien/altera/15.0/quartus/linux64/eperlcmd -I /home/hadrien/altera/15.0/quartus/linux64/perl/lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/europa -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin -I /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2 -I /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2 -- /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=system_nios2 --dir=/tmp/alt6780_44695731026454923.dir/0175_nios2_gen/ --quartus_bindir=/home/hadrien/altera/15.0/quartus/linux64 --verilog --config=/tmp/alt6780_44695731026454923.dir/0175_nios2_gen//system_nios2_processor_configuration.pl  --do_build_sim=0  ]
-Info: nios2: # 2015.12.11 09:19:09 (*) Starting Nios II generation
-Info: nios2: # 2015.12.11 09:19:09 (*)   Checking for plaintext license.
-Info: nios2: # 2015.12.11 09:19:11 (*)   Plaintext license not found.
-Info: nios2: # 2015.12.11 09:19:11 (*)   Checking for encrypted license (non-evaluation).
-Info: nios2: # 2015.12.11 09:19:13 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
-Info: nios2: # 2015.12.11 09:19:13 (*)   Elaborating CPU configuration settings
-Info: nios2: # 2015.12.11 09:19:13 (*)   Creating all objects for CPU
-Info: nios2: # 2015.12.11 09:19:14 (*)     Pipeline frontend
-Info: nios2: # 2015.12.11 09:19:16 (*)   Generating RTL from CPU objects
-Info: nios2: # 2015.12.11 09:19:18 (*)   Creating encrypted RTL
-Info: nios2: # 2015.12.11 09:19:18 (*) Done Nios II generation
+Info: nios2:   Generation command is [exec /home/hadrien/altera/15.0/quartus/linux64/eperlcmd -I /home/hadrien/altera/15.0/quartus/linux64/perl/lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/europa -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin -I /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2 -I /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2 -- /home/hadrien/altera/15.0/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=system_nios2 --dir=/tmp/alt6793_1169817767641933118.dir/0006_nios2_gen/ --quartus_bindir=/home/hadrien/altera/15.0/quartus/linux64 --verilog --config=/tmp/alt6793_1169817767641933118.dir/0006_nios2_gen//system_nios2_processor_configuration.pl  --do_build_sim=0  ]
+Info: nios2: # 2015.12.24 14:37:40 (*) Starting Nios II generation
+Info: nios2: # 2015.12.24 14:37:40 (*)   Checking for plaintext license.
+Info: nios2: # 2015.12.24 14:37:42 (*)   Plaintext license not found.
+Info: nios2: # 2015.12.24 14:37:42 (*)   Checking for encrypted license (non-evaluation).
+Info: nios2: # 2015.12.24 14:37:44 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
+Info: nios2: # 2015.12.24 14:37:44 (*)   Elaborating CPU configuration settings
+Info: nios2: # 2015.12.24 14:37:44 (*)   Creating all objects for CPU
+Info: nios2: # 2015.12.24 14:37:45 (*)     Pipeline frontend
+Info: nios2: # 2015.12.24 14:37:46 (*)   Generating RTL from CPU objects
+Info: nios2: # 2015.12.24 14:37:49 (*)   Creating encrypted RTL
+Info: nios2: # 2015.12.24 14:37:49 (*) Done Nios II generation
 Info: nios2: Done RTL generation for module 'system_nios2'
 Info: nios2: "system" instantiated altera_nios2_qsys "nios2"
 Info: sdram: Starting RTL generation for module 'system_sdram'
-Info: sdram:   Generation command is [exec /home/hadrien/altera/15.0/quartus/linux64/perl/bin/perl -I /home/hadrien/altera/15.0/quartus/linux64/perl/lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/europa -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin -I /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=system_sdram --dir=/tmp/alt6780_44695731026454923.dir/0176_sdram_gen/ --quartus_dir=/home/hadrien/altera/15.0/quartus --verilog --config=/tmp/alt6780_44695731026454923.dir/0176_sdram_gen//system_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram:   Generation command is [exec /home/hadrien/altera/15.0/quartus/linux64/perl/bin/perl -I /home/hadrien/altera/15.0/quartus/linux64/perl/lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/europa -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin/perl_lib -I /home/hadrien/altera/15.0/quartus/sopc_builder/bin -I /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/common -I /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /home/hadrien/altera/15.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=system_sdram --dir=/tmp/alt6793_1169817767641933118.dir/0007_sdram_gen/ --quartus_dir=/home/hadrien/altera/15.0/quartus --verilog --config=/tmp/alt6793_1169817767641933118.dir/0007_sdram_gen//system_sdram_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram: Done RTL generation for module 'system_sdram'
 Info: sdram: "system" instantiated altera_avalon_new_sdram_controller "sdram"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -140,6 +140,6 @@ Info: avalon_st_adapter_004: "mm_interconnect_0" instantiated altera_avalon_st_a
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
 Info: error_adapter_0: "avalon_st_adapter_004" instantiated error_adapter "error_adapter_0"
-Info: system: Done "system" with 49 modules, 82 files
+Info: system: Done "system" with 49 modules, 83 files
 Info: ip-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

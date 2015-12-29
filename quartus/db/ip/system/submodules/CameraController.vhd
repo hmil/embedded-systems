@@ -39,12 +39,23 @@ End CameraController;
 
 ARCHITECTURE comp OF CameraController IS
 
-	signal sCurrentFrame: STD_LOGIC_VECTOR (31 DOWNTO 0);
+	signal sReadFrame: STD_LOGIC_VECTOR (31 DOWNTO 0);
+	signal sWriteFrame: STD_LOGIC_VECTOR (31 DOWNTO 0);
+	signal sBufferAddr: STD_LOGIC_VECTOR (31 DOWNTO 0);
+	signal sFrameLength: STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal sIncrementFrame: STD_LOGIC;
 	signal sStart: STD_LOGIC;
+	signal sStop: STD_LOGIC;
+	signal sStartCapture: STD_LOGIC;
 	signal sDone: STD_LOGIC;
+
 	signal sReset_n: STD_LOGIC;
+	signal sResetMaster_n: STD_LOGIC;
+	signal sResetCore_n: STD_LOGIC;
 	signal sSoftReset: STD_LOGIC;
+
+	signal sSoftReadDone: STD_LOGIC;
+	signal sReadDone: STD_LOGIC;
 
 	signal sPxAvail: STD_LOGIC_VECTOR(10 downto 0);
 	signal sPxData: STD_LOGIC_VECTOR(15 downto 0);
@@ -52,11 +63,13 @@ ARCHITECTURE comp OF CameraController IS
 	signal sPxCount: integer range 0 to 33554431;
 	signal sPxCountValid: STD_LOGIC;
 
+	signal sFrameRDY: STD_LOGIC;
 
 	signal sDbgTotPx: integer range 0 to 33554431;
 
 	component cctrl_slave is
-		port (
+		PORT(
+			-- Avalon interfaces signals
 			Clk : IN std_logic;
 			nReset: IN std_logic;
 			Address: IN std_logic_vector (2 DOWNTO 0);
@@ -65,19 +78,17 @@ ARCHITECTURE comp OF CameraController IS
 			Write: IN std_logic;
 			ReadData: OUT std_logic_vector (31 DOWNTO 0);
 			WriteData: IN std_logic_vector (31 DOWNTO 0);
-			SoftReset: OUT std_logic;
-			-- Camera controller interconnect
-			CurrentFrame: OUT std_logic_vector (31 DOWNTO 0);
-			IncCurrentFrame: IN std_logic;
-			Start: OUT STD_LOGIC;
-			-- For testing DMA capabilities (TODO: to be removed)
-			Done: IN STD_LOGIC;
-			PxAvail: IN std_logic_vector(10 downto 0);
-			PxRdReq: IN std_logic;
-			PxData: IN std_logic_vector(15 downto 0);
 
-			PxCount: IN integer range 0 to 33554431;
-			DbgTotPx: IN integer range 0 to 33554431
+			SoftReset: OUT STD_LOGIC;
+
+			--  Camera controller interconnect
+			CurrentFrame: IN std_logic_vector (31 DOWNTO 0);
+			BufferAddr: OUT std_logic_vector (31 DOWNTO 0);
+			FrameLength: OUT std_logic_vector(31 DOWNTO 0);
+			Start: OUT STD_LOGIC;
+			Stop: OUT STD_LOGIC;
+			SoftReadDone: OUT STD_LOGIC;
+			ReadAvail: IN STD_LOGIC
 		);
 	end component;
 
@@ -129,21 +140,61 @@ ARCHITECTURE comp OF CameraController IS
 		);
 	end component;
 
+	component cctrl_controller is
+		PORT (
+	    Clk: in std_logic;
+	    nReset: in std_logic;
+
+	    BufferAddr: in std_logic_vector(31 downto 0);
+			FrameLength: in std_logic_vector(31 downto 0);
+	    WriteAddr: out std_logic_vector(31 downto 0);
+	    ReadAddr: out std_logic_vector(31 downto 0);
+
+	    Start: in std_logic;          -- asserted when Start command issued through avalon bus
+	    Stop: in std_logic;
+	    FrameComplete: in std_logic;  -- asserted when master finished copying frame
+
+	    ReaderComplete: in std_logic; -- asserted when reader finished reading frame
+	    HasFrame: out std_logic;      -- asserted any time when a frame is available
+
+	    reset_core_n: out std_logic;
+			reset_master_n: out std_logic;
+	    start_capture: out std_logic  -- start capture devices
+	  );
+	end component;
+
 BEGIN
 
-	sReset_n <= nReset and not sSoftReset;
-
 	CamReset_n <= sReset_n;
+	CurrentFrame <= sReadFrame;
+	FrameRdy <= sFrameRDY;
+	sReset_n <= nReset and not sSoftReset;
+	sReadDone <= ReadDone or sSoftReadDone;
 
-	sIncrementFrame <= '0';
+	controller: cctrl_controller PORT MAP (
+    Clk => Clk,
+    nReset => sReset_n,
 
-	CurrentFrame <= sCurrentFrame;
+    BufferAddr => sBufferAddr,
+		FrameLength => sFrameLength,
+    WriteAddr => sWriteFrame,
+    ReadAddr => sReadFrame,
 
-	FrameRDY <= '0'; -- TODO
+    Start => sStart,          -- asserted when Start command issued through avalon bus
+    Stop => sStop,
+    FrameComplete => sDone,  -- asserted when master finished copying frame
+
+    ReaderComplete => sReadDone, -- asserted when reader finished reading frame
+    HasFrame => sFrameRDY,
+
+    reset_core_n => sResetCore_n,
+		reset_master_n => sResetMaster_n,
+    start_capture => sStartCapture  -- start capture devices
+  );
 
 	core: cctrl_core PORT MAP (
 		Clk => Clk,
-		nReset => sReset_n,
+		nReset => sResetCore_n,
 		CamClk => CamClk,
 		FrameValid => CamFV,
 		LineValid => CamLV,
@@ -154,10 +205,11 @@ BEGIN
 		PxData => sPxData,
 		PxCount => sPxCount,
 		PxCountValid => sPxCountValid,
-		Start => sStart
+		Start => sStartCapture
 	);
 
 	slave: cctrl_slave PORT MAP (
+		-- Avalon interfaces signals
 		Clk => Clk,
 		nReset => nReset,
 		Address => AS_Address,
@@ -166,25 +218,22 @@ BEGIN
 		Write => AS_Write,
 		ReadData => AS_ReadData,
 		WriteData => AS_WriteData,
+
 		SoftReset => sSoftReset,
 
-		CurrentFrame => sCurrentFrame,
-		IncCurrentFrame => sIncrementFrame,
+		--  Camera controller interconnect
+		CurrentFrame => sReadFrame,
+		BufferAddr => sBufferAddr,
+		FrameLength => sFrameLength,
 		Start => sStart,
-
-		-- For testing DMA capabilities (to be removed)
-		Done => sDone,
-		PxAvail => sPxAvail,
-		PxRdReq => sPxRdReq,
-		PxData => sPxData,
-
-		PxCount => sPxCount,
-		DbgTotPx => sDbgTotPx
+		Stop => sStop,
+		SoftReadDone => sSoftReadDone,
+		ReadAvail => sFrameRDY
 	);
 
 	master: cctrl_master PORT MAP (
 		Clk => Clk,
-		nReset => sReset_n,
+		nReset => sResetMaster_n,
 		-- Avalon Master
 		Address => AM_Address,
 		BurstCount => AM_BurstCount,
@@ -196,8 +245,8 @@ BEGIN
 		DataRead => AM_DataRead,
 		WaitRequest => AM_WaitRequest,
 
-		Start => sStart,
-    BufferAddr => sCurrentFrame,
+		Start => sStartCapture,
+    BufferAddr => sWriteFrame,
     Done => sDone,
 
 		PxAvail => sPxAvail,

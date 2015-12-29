@@ -110,6 +110,13 @@ state.BLUE 0 0 1 0 0 0 0 0 0 0 1
 state.GREEN_2 0 1 0 0 0 0 0 0 0 0 1 
 state.SEND_FRAME 1 0 0 0 0 0 0 0 0 0 1 
 
+State Machine - |CameraProject|system:u0|CameraController:camera_controller_0|cctrl_controller:controller|s
+Name s.EndOfFrame s.Capturing s.StartCapture s.Idle 
+s.Idle 0 0 0 0 
+s.StartCapture 0 0 1 1 
+s.Capturing 0 1 0 1 
+s.EndOfFrame 1 0 0 1 
+
 State Machine - |CameraProject|system:u0|system_nios2:nios2|system_nios2_nios2_oci:the_system_nios2_nios2_oci|system_nios2_jtag_debug_module_wrapper:the_system_nios2_jtag_debug_module_wrapper|system_nios2_jtag_debug_module_tck:the_system_nios2_jtag_debug_module_tck|DRsize
 Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
 DRsize.000 0 0 0 0 0 0 

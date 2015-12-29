@@ -50,12 +50,12 @@ void dump_pcm_header(unsigned int width, unsigned int height) {
 	printf("255\n");
 }
 
-void dump_pcm_data(const void *buffer, unsigned int width, unsigned int height)
+void dump_pcm_data(uint16_t *buffer, unsigned int width, unsigned int height)
 {
 	unsigned int i = 0;
 
 	for (i = 0 ; i < (width * height) ; i ++) {
-		unsigned short px = ((unsigned short *)buffer)[i];
+		unsigned short px = buffer[i];
 
 
 		unsigned char b = (px & 0x001f);
@@ -109,10 +109,10 @@ int main()
     i2c_dev i2c = i2c_inst((void *) I2C_0_BASE);
     i2c_init(&i2c, I2C_FREQ);
 
-    int width = 640, height = 480; // VGA
-//    int width = 160, height = 120;
+    int i = 0;
 
-    dump_pcm_header(width, height);
+    int width = 640, height = 480; // VGA
+//    int width = 320, height = 240;
 
     // Sample on rising edge
     trdb_d5m_write(&i2c, 0x00a, 0x8000);
@@ -142,7 +142,7 @@ int main()
 //	trdb_d5m_write(&i2c, 0x023, 0x0000);
 
 
-    void *buffer = calloc(2, width*height);
+	uint16_t *buffer = calloc(2*4, width*height);
 	if (buffer == NULL) {
 		 printf("# Cannot allocate image buffer\n");
 		return 1;
@@ -157,6 +157,8 @@ int main()
 	IOWR_32DIRECT(CAMERA_CONTROLLER_0_BASE, CAM_BUFFER_START, buffer);
 	// Start capture
 	IOWR_32DIRECT(CAMERA_CONTROLLER_0_BASE, CAM_CTRL_1, CAM_START);
+	IOWR_32DIRECT(CAMERA_CONTROLLER_0_BASE, CAM_FRAME_LENGTH, width * height * 2);
+
 
 	IOWR_32DIRECT(CMOS_SENSOR_OUTPUT_GENERATOR_0_BASE, 0x00, width << 1); // Width
 	IOWR_32DIRECT(CMOS_SENSOR_OUTPUT_GENERATOR_0_BASE, 0x04, height << 1); // Height
@@ -172,21 +174,28 @@ int main()
 //	  constant LINE_LINE_BLANK_CYCLES   : positive := 1;
 //	  constant LINE_FRAME_BLANK_CYCLES  : natural  := 0;
 
-	int ctl;
-	do {
-		ctl = IORD_32DIRECT(CAMERA_CONTROLLER_0_BASE, 0x0c);
-		 printf("# CTRL: %08x\n", ctl);
+	for (i = 0 ; i < 10 ; i++) {
+		puts("# == NEW FRAME \n");
+		dump_pcm_header(width, height);
+		int ctl;
+		do {
+			ctl = IORD_32DIRECT(CAMERA_CONTROLLER_0_BASE, 0x0c);
+			 printf("# CTRL: %08x\n", ctl);
 
-		 int debug_reg = IORD_32DIRECT(CAMERA_CONTROLLER_0_BASE, 0x14);
-		 printf("# DBG: %08x\n", debug_reg);
+			 int debug_reg = IORD_32DIRECT(CAMERA_CONTROLLER_0_BASE, 0x14);
+			 printf("# DBG: %08x\n", debug_reg);
 
-		sleep_ms(10000);
-	} while ( !(ctl & 0x80) );
+			sleep_ms(10000);
+		} while ( !(ctl & CAM_READ_AVAIL) );
+		void * addr = IORD_32DIRECT(CAMERA_CONTROLLER_0_BASE, CAM_CURRENT_FRAME);
+		printf("# Buffer addr: %08x \n", (int)addr);
+		dump_pcm_data(addr, width, height);
+		IOWR_32DIRECT(CAMERA_CONTROLLER_0_BASE, CAM_CTRL_1, CAM_READ_DONE);
+	}
 
+
+	IOWR_32DIRECT(CAMERA_CONTROLLER_0_BASE, CAM_CTRL_1, CAM_STOP);
 	printf("\n# Finished\n");
-
-	dump_pcm_data(buffer, width, height);
-
 
     return 0;
 }

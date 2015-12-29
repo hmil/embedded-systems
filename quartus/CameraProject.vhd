@@ -142,6 +142,8 @@ BEGIN
 		i2c_scl => GPIO_0_22,
 		i2c_sda => GPIO_0_21,
 
+		camera_controller_read_done => '0',
+
 		-- Use simulator:
 
 		-- camera_input_clk => CLOCK_50,

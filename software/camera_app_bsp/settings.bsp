@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Dec 23, 2015 2:58:00 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1450879080701</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Dec 28, 2015 5:52:28 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1451321548085</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/data/workspace/ES/lab03/software/camera_app_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>/data/workspace/ES/lab03/quartus/system.sopcinfo</SopcDesignFile>

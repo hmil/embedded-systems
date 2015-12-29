@@ -17,6 +17,8 @@
   #define CAM_START           0x0010
   #define CAM_STOP            0x0020
   #define CAM_RESET           0x0040
+  #define CAM_READ_DONE       0x0080
+  #define CAM_READ_AVAIL      0x0100
 
   // Preset segment (CAM_CTRL)
   #define CAM_PRESET          0x000f

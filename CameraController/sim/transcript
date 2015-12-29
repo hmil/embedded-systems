@@ -1,220 +1,7 @@
 # Loading project CameraController
-vsim work.tb_cctrl
-# vsim 
-# Start time: 09:04:18 on Dec 18,2015
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.cctrl_constants
-# Loading work.cmos_sensor_output_generator_constants
-# Loading work.conversion_util(body)
-# Loading work.tb_cctrl(test)
-# Loading work.cameracontroller(comp)
-# Loading work.cctrl_core(arch)
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# Loading work.cctrl_slave(comp)
-# Loading work.cctrl_master(cctrl_master)
-# Loading work.cmos_sensor_output_generator(rtl)
-# Loading work.cmos_sensor_output_generator_random(behavioral)
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 16#8 5827751
-run 20000000
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 700 ns  Iteration: 2  Instance: /tb_cctrl/cctrl_inst/master
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 700 ns  Iteration: 3  Instance: /tb_cctrl/cctrl_inst/master
-# WARNING: No extended dataflow license exists
-restart all
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-vsim work.tb_cctrl
-# vsim 
-# Start time: 09:50:34 on Dec 18,2015
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.cctrl_constants
-# Loading work.cmos_sensor_output_generator_constants
-# Loading work.conversion_util(body)
-# Loading work.tb_cctrl(test)
-# Loading work.cameracontroller(comp)
-# Loading work.cctrl_core(arch)
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# Loading work.cctrl_slave(comp)
-# Loading work.cctrl_master(cctrl_master)
-# Loading work.cmos_sensor_output_generator(rtl)
-# Loading work.cmos_sensor_output_generator_random(behavioral)
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 0 0, 16#8 15827751
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
-# Value length (1) does not equal array index length (9).
-# 
-# ** Error: (vsim-4011) Invalid force value: 0 0, 16#8 15827751.
-# 
-
-
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 0 0, 16#8 15827751
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
-# Value length (1) does not equal array index length (9).
-# 
-# ** Error: (vsim-4011) Invalid force value: 0 0, 16#8 15827751.
-# 
-run 20000000
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 700 ns  Iteration: 2  Instance: /tb_cctrl/cctrl_inst/master
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 700 ns  Iteration: 3  Instance: /tb_cctrl/cctrl_inst/master
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 16200 ns  Iteration: 2  Instance: /tb_cctrl/cctrl_inst/master
-vsim work.tb_cctrl
-# vsim 
-# Start time: 09:51:16 on Dec 18,2015
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.cctrl_constants
-# Loading work.cmos_sensor_output_generator_constants
-# Loading work.conversion_util(body)
-# Loading work.tb_cctrl(test)
-# Loading work.cameracontroller(comp)
-# Loading work.cctrl_core(arch)
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# Loading work.cctrl_slave(comp)
-# Loading work.cctrl_master(cctrl_master)
-# Loading work.cmos_sensor_output_generator(rtl)
-# Loading work.cmos_sensor_output_generator_random(behavioral)
-
-run 20000000add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-# ** Error: (vsim-4001) Incorrect number of arguments.
-# Usage: run [<timesteps> [<time_units>]] | -all | -continue | -next | -step | -over | -out | -init | -final
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 0 0, 16#8 18827751
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
-# Value length (1) does not equal array index length (9).
-# 
-# ** Error: (vsim-4011) Invalid force value: 0 0, 16#8 18827751.
-# 
-run 30000000
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 700 ns  Iteration: 2  Instance: /tb_cctrl/cctrl_inst/master
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 700 ns  Iteration: 3  Instance: /tb_cctrl/cctrl_inst/master
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 16200 ns  Iteration: 2  Instance: /tb_cctrl/cctrl_inst/master
-
-
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 0 0, 16#8 18827751
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
-# Value length (1) does not equal array index length (9).
-# 
-# ** Error: (vsim-4011) Invalid force value: 0 0, 16#8 18827751.
-# 
-run 30000000
-restart all
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-vsim work.tb_cctrl
-# vsim 
-# Start time: 09:52:35 on Dec 18,2015
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.cctrl_constants
-# Loading work.cmos_sensor_output_generator_constants
-# Loading work.conversion_util(body)
-# Loading work.tb_cctrl(test)
-# Loading work.cameracontroller(comp)
-# Loading work.cctrl_core(arch)
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# Loading work.cctrl_slave(comp)
-# Loading work.cctrl_master(cctrl_master)
-# Loading work.cmos_sensor_output_generator(rtl)
-# Loading work.cmos_sensor_output_generator_random(behavioral)
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 0 0, 16#8 18827751
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
-# Value length (1) does not equal array index length (9).
-# 
-# ** Error: (vsim-4011) Invalid force value: 0 0, 16#8 18827751.
-# 
-run 30000000
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 700 ns  Iteration: 2  Instance: /tb_cctrl/cctrl_inst/master
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 700 ns  Iteration: 3  Instance: /tb_cctrl/cctrl_inst/master
-# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
-#    Time: 16200 ns  Iteration: 2  Instance: /tb_cctrl/cctrl_inst/master
-vsim work.tb_cctrl
-# vsim 
-# Start time: 09:54:01 on Dec 18,2015
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.cctrl_constants
-# Loading work.cmos_sensor_output_generator_constants
-# Loading work.conversion_util(body)
-# Loading work.tb_cctrl(test)
-# Loading work.cameracontroller(comp)
-# Loading work.cctrl_core(arch)
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# Loading work.cctrl_slave(comp)
-# Loading work.cctrl_master(cctrl_master)
-# Loading work.cmos_sensor_output_generator(rtl)
-# Loading work.cmos_sensor_output_generator_random(behavioral)
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 16#0 0, 16#8 18827751
-run 30000000
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
-# Compile of CameraController.vhd was successful.
+# Compile of CameraController.vhd failed with 1 errors.
 # Compile of cctrl_master.vhd was successful.
-# Compile of cctrl_slave.vhd was successful.
+# Compile of cctrl_slave.vhd failed with 1 errors.
 # Compile of tb_cctrl.vhd was successful.
 # Compile of CameraController_constants.vhd was successful.
 # Compile of cctrl_core.vhd was successful.
@@ -223,151 +10,73 @@ run 30000000
 # Compile of cmos_sensor_output_generator_random.vhd was successful.
 # Compile of tb_cmos_sensor_output_generator.vhd was successful.
 # Compile of conversion_util.vhd was successful.
-# 11 compiles, 0 failed with no errors.
-vsim work.tb_cctrl
-# vsim 
-# Start time: 09:56:57 on Dec 18,2015
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.cctrl_constants
-# Loading work.cmos_sensor_output_generator_constants
-# Loading work.conversion_util(body)
-# Loading work.tb_cctrl(test)
-# Loading work.cameracontroller(comp)
-# Loading work.cctrl_core(arch)
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# Loading work.cctrl_slave(comp)
-# Loading work.cctrl_master(cctrl_master)
-# Loading work.cmos_sensor_output_generator(rtl)
-# Loading work.cmos_sensor_output_generator_random(behavioral)
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 16#0 0, 16#8 18827751
-run 30000000
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# 12 compiles, 3 failed with 3 errors.
+# Compile of CameraController.vhd failed with 1 errors.
 # Compile of cctrl_master.vhd was successful.
-vsim work.tb_cctrl
-# vsim 
-# Start time: 10:00:02 on Dec 18,2015
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.cctrl_constants
-# Loading work.cmos_sensor_output_generator_constants
-# Loading work.conversion_util(body)
-# Loading work.tb_cctrl(test)
-# Loading work.cameracontroller(comp)
-# Loading work.cctrl_core(arch)
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# Loading work.cctrl_slave(comp)
-# Loading work.cctrl_master(cctrl_master)
-# Loading work.cmos_sensor_output_generator(rtl)
-# Loading work.cmos_sensor_output_generator_random(behavioral)
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 16#0 0, 16#8 18827751
-run 30000000
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
-# Compile of cctrl_master.vhd was successful.
-vsim work.tb_cctrl
-# vsim 
-# Start time: 10:04:48 on Dec 18,2015
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.cctrl_constants
-# Loading work.cmos_sensor_output_generator_constants
-# Loading work.conversion_util(body)
-# Loading work.tb_cctrl(test)
-# Loading work.cameracontroller(comp)
-# Loading work.cctrl_core(arch)
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# Loading work.cctrl_slave(comp)
-# Loading work.cctrl_master(cctrl_master)
-# Loading work.cmos_sensor_output_generator(rtl)
-# Loading work.cmos_sensor_output_generator_random(behavioral)
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 16#0 0, 16#8 18827751
-run 30000000
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
-# WARNING: No extended dataflow license exists
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# WARNING: No extended dataflow license exists
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Compile of cctrl_slave.vhd failed with 1 errors.
 # Compile of tb_cctrl.vhd was successful.
-vsim work.tb_cctrl
-# vsim 
-# Start time: 10:23:14 on Dec 18,2015
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.cctrl_constants
-# Loading work.cmos_sensor_output_generator_constants
-# Loading work.conversion_util(body)
-# Loading work.tb_cctrl(test)
-# Loading work.cameracontroller(comp)
-# Loading work.cctrl_core(arch)
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# Loading work.cctrl_slave(comp)
-# Loading work.cctrl_master(cctrl_master)
-# Loading work.cmos_sensor_output_generator(rtl)
-# Loading work.cmos_sensor_output_generator_random(behavioral)
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 16#0 0, 16#8 18827751
-run 30000000
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
-run 1000000
-run 1000000
-restart all
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-add wave sim:/tb_cctrl/cctrl_inst/slave/*
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 16#0 0, 16#8 18827751
-run 40000000
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
+# Compile of CameraController_constants.vhd was successful.
+# Compile of cctrl_core.vhd was successful.
+# Compile of cmos_sensor_output_generator.vhd was successful.
+# Compile of cmos_sensor_output_generator_constants.vhd was successful.
+# Compile of cmos_sensor_output_generator_random.vhd was successful.
+# Compile of tb_cmos_sensor_output_generator.vhd was successful.
+# Compile of conversion_util.vhd was successful.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# 12 compiles, 3 failed with 3 errors.
+# Compile of CameraController.vhd failed with 1 errors.
+# Compile of cctrl_master.vhd was successful.
+# Compile of cctrl_slave.vhd failed with 1 errors.
+# Compile of tb_cctrl.vhd was successful.
+# Compile of CameraController_constants.vhd was successful.
+# Compile of cctrl_core.vhd was successful.
+# Compile of cmos_sensor_output_generator.vhd was successful.
+# Compile of cmos_sensor_output_generator_constants.vhd was successful.
+# Compile of cmos_sensor_output_generator_random.vhd was successful.
+# Compile of tb_cmos_sensor_output_generator.vhd was successful.
+# Compile of conversion_util.vhd was successful.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# 12 compiles, 3 failed with 3 errors.
+# Compile of CameraController.vhd failed with 1 errors.
+# Compile of cctrl_master.vhd was successful.
+# Compile of cctrl_slave.vhd failed with 1 errors.
+# Compile of tb_cctrl.vhd was successful.
+# Compile of CameraController_constants.vhd was successful.
+# Compile of cctrl_core.vhd was successful.
+# Compile of cmos_sensor_output_generator.vhd was successful.
+# Compile of cmos_sensor_output_generator_constants.vhd was successful.
+# Compile of cmos_sensor_output_generator_random.vhd was successful.
+# Compile of tb_cmos_sensor_output_generator.vhd was successful.
+# Compile of conversion_util.vhd was successful.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# 12 compiles, 3 failed with 3 errors.
+# Compile of CameraController.vhd failed with 1 errors.
+# Compile of cctrl_master.vhd was successful.
+# Compile of cctrl_slave.vhd failed with 1 errors.
+# Compile of tb_cctrl.vhd was successful.
+# Compile of CameraController_constants.vhd was successful.
+# Compile of cctrl_core.vhd was successful.
+# Compile of cmos_sensor_output_generator.vhd was successful.
+# Compile of cmos_sensor_output_generator_constants.vhd was successful.
+# Compile of cmos_sensor_output_generator_random.vhd was successful.
+# Compile of tb_cmos_sensor_output_generator.vhd was successful.
+# Compile of conversion_util.vhd was successful.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# 12 compiles, 3 failed with 3 errors.
+# Compile of CameraController.vhd failed with 1 errors.
+# Compile of cctrl_master.vhd was successful.
+# Compile of cctrl_slave.vhd failed with 1 errors.
+# Compile of tb_cctrl.vhd was successful.
+# Compile of CameraController_constants.vhd was successful.
+# Compile of cctrl_core.vhd was successful.
+# Compile of cmos_sensor_output_generator.vhd was successful.
+# Compile of cmos_sensor_output_generator_constants.vhd was successful.
+# Compile of cmos_sensor_output_generator_random.vhd was successful.
+# Compile of tb_cmos_sensor_output_generator.vhd was successful.
+# Compile of conversion_util.vhd was successful.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# 12 compiles, 3 failed with 3 errors.
 # Compile of CameraController.vhd was successful.
 # Compile of cctrl_master.vhd was successful.
 # Compile of cctrl_slave.vhd failed with 1 errors.
@@ -379,37 +88,8 @@ run 40000000
 # Compile of cmos_sensor_output_generator_random.vhd was successful.
 # Compile of tb_cmos_sensor_output_generator.vhd was successful.
 # Compile of conversion_util.vhd was successful.
-# 11 compiles, 1 failed with 1 error.
-# Compile of cctrl_slave.vhd was successful.
-vsim work.tb_cctrl
-# vsim 
-# Start time: 11:31:50 on Dec 18,2015
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.cctrl_constants
-# Loading work.cmos_sensor_output_generator_constants
-# Loading work.conversion_util(body)
-# Loading work.tb_cctrl(test)
-# Loading work.cameracontroller(comp)
-# Loading work.cctrl_core(arch)
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# Loading work.cctrl_slave(comp)
-# Loading work.cctrl_master(cctrl_master)
-# Loading work.cmos_sensor_output_generator(rtl)
-# Loading work.cmos_sensor_output_generator_random(behavioral)
-add wave sim:/tb_cctrl/cctrl_inst/slave/*
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 16#0 0, 16#8 18827751
-run 40000000
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# 12 compiles, 2 failed with 2 errors.
 # Compile of CameraController.vhd was successful.
 # Compile of cctrl_master.vhd was successful.
 # Compile of cctrl_slave.vhd was successful.
@@ -421,89 +101,43 @@ run 40000000
 # Compile of cmos_sensor_output_generator_random.vhd was successful.
 # Compile of tb_cmos_sensor_output_generator.vhd was successful.
 # Compile of conversion_util.vhd was successful.
-# 11 compiles, 0 failed with no errors.
-vsim work.tb_cctrl
-# vsim 
-# Start time: 12:00:48 on Dec 18,2015
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.cctrl_constants
-# Loading work.cmos_sensor_output_generator_constants
-# Loading work.conversion_util(body)
-# Loading work.tb_cctrl(test)
-# Loading work.cameracontroller(comp)
-# Loading work.cctrl_core(arch)
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# Loading work.cctrl_slave(comp)
-# Loading work.cctrl_master(cctrl_master)
-# Loading work.cmos_sensor_output_generator(rtl)
-# Loading work.cmos_sensor_output_generator_random(behavioral)
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 16#0 0, 16#8 18827751
-run 40000000
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# 12 compiles, 1 failed with 1 error.
 # Compile of CameraController.vhd was successful.
 # Compile of cctrl_master.vhd was successful.
 # Compile of cctrl_slave.vhd was successful.
 # Compile of tb_cctrl.vhd was successful.
 # Compile of CameraController_constants.vhd was successful.
-# Compile of cctrl_core.vhd failed with 1 errors.
+# Compile of cctrl_core.vhd was successful.
 # Compile of cmos_sensor_output_generator.vhd was successful.
 # Compile of cmos_sensor_output_generator_constants.vhd was successful.
 # Compile of cmos_sensor_output_generator_random.vhd was successful.
 # Compile of tb_cmos_sensor_output_generator.vhd was successful.
 # Compile of conversion_util.vhd was successful.
-# 11 compiles, 1 failed with 1 error.
-# Compile of cctrl_core.vhd was successful.
-vsim work.tb_cctrl
-# vsim 
-# Start time: 12:20:06 on Dec 18,2015
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.cctrl_constants
-# Loading work.cmos_sensor_output_generator_constants
-# Loading work.conversion_util(body)
-# Loading work.tb_cctrl(test)
-# Loading work.cameracontroller(comp)
-# Loading work.cctrl_core(arch)
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# Loading work.cctrl_slave(comp)
-# Loading work.cctrl_master(cctrl_master)
-# Loading work.cmos_sensor_output_generator(rtl)
-# Loading work.cmos_sensor_output_generator_random(behavioral)
-add wave sim:/tb_cctrl/cctrl_inst/slave/*
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 16#0 0, 16#8 18827751
-run 40000000
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
-restart all;
-# ** Warning: (vsim-3473) Component instance "fifo : cctrl_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-# ** Warning: (vsim-3473) Component instance "px_fifo : cctrl_px_fifo" is not bound.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_cctrl/cctrl_inst/core File: /data/workspace/ES/lab03/CameraController/cctrl_core.vhd
-add wave sim:/tb_cctrl/cctrl_inst/core/*
-add wave -position insertpoint sim:/tb_cctrl/cctrl_inst/master/*
-force -freeze sim:/tb_cctrl/cctrl_inst/core/fifo_wrfull 0 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxData 16#b16b00b5 0
-force -freeze sim:/tb_cctrl/cctrl_inst/master/PxAvail 16#0 0, 16#8 18827751
-run 40000000
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxData as root of /tb_cctrl/cctrl_inst/master/PxData specified in the force.
-# ** Warning: (vsim-8780) Forcing /tb_cctrl/cctrl_inst/sPxAvail as root of /tb_cctrl/cctrl_inst/master/PxAvail specified in the force.
-# End time: 11:17:28 on Dec 19,2015, Elapsed time: 22:57:22
-# Errors: 0, Warnings: 8
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# 12 compiles, 1 failed with 1 error.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd failed with 1 errors.
+# Compile of cctrl_controller.vhd was successful.
+# Window cannot be closed because the modal window "Quit Vsim" is still open.
