@@ -1,0 +1,107 @@
+library ieee;
+use ieee.std_logic_1164.all; 
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+library work;
+-- max = 76800 pixels
+entity master is 
+	port
+	(
+		-- global
+		am_clk : in std_logic;
+		am_reset_n : in std_logic;
+		-- To FIFO
+		if_wrData : out std_logic_vector(15 downto 0);
+		-- From FIFO
+		if_almostFull : in std_logic;
+		-- From slave
+		as_initOk : in std_logic;
+		-- To bus
+		bus_add : out std_logic_vector(31 downto 0);
+		bus_read : out std_logic;
+		-- From bus
+		bus_waitReq : in std_logic;
+		bus_read_data_valid : in std_logic;
+		bus_read_data : in std_logic_vector(15 downto 0);
+		-- IRQ in
+		ext_IRQ : in std_logic;
+		-- IRQ out
+		am_readOK : out std_logic
+	);
+end master;
+
+architecture implementation of master is
+type state_type is (INIT, WAIT_STATE, READ_INIT, WAIT_SPACE, BUS_REQ, WAIT_DATA, RCV_DATA, OFFSET, ACK);
+signal state, next_state : state_type;
+signal current_buffer, next_buffer : std_logic_vector(1 downto 0);
+signal offset, next_offset : std_logic_vector(15 downto 0);
+signal next_burst_counter, burst_counter : std_logic_vector(15 downto 0);
+
+begin
+
+	process(am_clk, am_reset_n)
+	begin 
+		if am_reset_n = '0' then 
+			state <= INIT;
+		elsif rising_edge(am_clk) then 
+			state <= next_state;
+			current_buffer <= next_buffer;
+			offset <= next_offset;
+		end if;
+	end process;
+	
+	process(state, )
+	begin
+		next_state <= state;
+		next_buffer <= current_buffer;
+		next_offset <= offset;
+		
+		case state is 
+		when INIT =>
+			current_buffer <= "10";
+			if as_initOk then
+				next_state <= WAIT_STATE;
+			end if;
+			
+		when WAIT_STATE =>
+			am_readOk <= '0';
+			if current_buffer = "10" then 
+				next_buffer <= "00";
+			else 
+				next_buffer <= current_buffer + 1;
+			end if;
+			if ext_IRQ = '1' then 
+				next_state <= READ_INIT;
+			end if;
+			
+		when READ_INIT =>
+			next_offset <= '0';
+			burst_counter <= '0';
+			next_state <= WAIT_SPACE;
+			
+		when WAIT_SPACE => 
+			if if_almostFull = '0' then 
+				next_state <= BUS_REQ;
+			end if;
+			
+		when BUS_REQ =>
+			bus_read <= '1';
+			bus_add <= offset; -- TODO address_buffer[current_buffer] + offset; ! modifier slave
+			if bus_read_data_valid then
+				if bus_waitReq then
+					next_state <= RCV_DATA;
+				else
+					next_state <= WAIT_DATA;
+				end if;
+			end if;
+		
+		when RCV_DATA =>
+			if_wrData <= bus_read_data;
+			next_
+			
+		when others => 
+		end case;
+	end process;
+	
+end implementation;

@@ -1,0 +1,25 @@
+	component full_sys is
+		port (
+			clk_clk                 : in    std_logic                     := 'X';             -- clk
+			clk_sdram_clk           : out   std_logic;                                        -- clk
+			reset_n_reset_n         : in    std_logic                     := 'X';             -- reset_n
+			sdram_addr              : out   std_logic_vector(12 downto 0);                    -- addr
+			sdram_ba                : out   std_logic_vector(1 downto 0);                     -- ba
+			sdram_cas_n             : out   std_logic;                                        -- cas_n
+			sdram_cke               : out   std_logic;                                        -- cke
+			sdram_cs_n              : out   std_logic;                                        -- cs_n
+			sdram_dq                : inout std_logic_vector(15 downto 0) := (others => 'X'); -- dq
+			sdram_dqm               : out   std_logic_vector(1 downto 0);                     -- dqm
+			sdram_ras_n             : out   std_logic;                                        -- ras_n
+			sdram_we_n              : out   std_logic;                                        -- we_n
+			signaltap_clk_clk       : out   std_logic;                                        -- clk
+			lcd_data_lcd_data       : out   std_logic_vector(15 downto 0);                    -- lcd_data
+			lcd_dc_lcd_dc           : out   std_logic;                                        -- lcd_dc
+			lcd_rd_lcd_rd           : out   std_logic;                                        -- lcd_rd
+			lcd_wr_lcd_wr           : out   std_logic;                                        -- lcd_wr
+			lcd_reset_n_lcd_reset_n : out   std_logic;                                        -- lcd_reset_n
+			ext_irq_ext_irq         : in    std_logic                     := 'X';             -- ext_irq
+			am_readok_am_readok     : out   std_logic                                         -- am_readok
+		);
+	end component full_sys;
+

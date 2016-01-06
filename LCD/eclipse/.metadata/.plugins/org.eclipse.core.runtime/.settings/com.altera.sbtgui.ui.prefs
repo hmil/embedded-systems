@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+newSoftwareExampleWizardPage.defaultLocation=Z\:\\ES\\LCD\\quartus\\software\\LCD_prog
+newSoftwareExampleWizardPage.sopcinfoFile=Z\:\\ES\\LCD\\quartus\\full_sys.sopcinfo
+newSoftwareExampleWizardPage2.newBspLocation=Z\:\\ES\\LCD\\quartus\\software\\LCD_prog_bsp

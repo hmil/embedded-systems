@@ -1,0 +1,156 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 64 64 336 304)
+	(text "master" (rect 5 0 39 12)(font "Arial" ))
+	(text "inst" (rect 8 224 25 236)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "am_clk" (rect 0 0 35 12)(font "Arial" ))
+		(text "am_clk" (rect 21 27 56 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "am_reset_n" (rect 0 0 57 12)(font "Arial" ))
+		(text "am_reset_n" (rect 21 43 78 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 128 0)
+		(input)
+		(text "fifo_almostFull" (rect 0 0 74 12)(font "Arial" ))
+		(text "fifo_almostFull" (rect 120 25 132 99)(font "Arial" )(vertical))
+		(line (pt 128 0)(pt 128 17))
+	)
+	(port
+		(pt 0 88)
+		(input)
+		(text "as_initOk" (rect 0 0 46 12)(font "Arial" ))
+		(text "as_initOk" (rect 21 83 67 95)(font "Arial" ))
+		(line (pt 0 88)(pt 16 88))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "add_buf_0[31..0]" (rect 0 0 83 12)(font "Arial" ))
+		(text "add_buf_0[31..0]" (rect 21 123 104 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "add_buf_1[31..0]" (rect 0 0 83 12)(font "Arial" ))
+		(text "add_buf_1[31..0]" (rect 21 139 104 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "add_buf_2[31..0]" (rect 0 0 83 12)(font "Arial" ))
+		(text "add_buf_2[31..0]" (rect 21 155 104 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
+		(pt 88 240)
+		(input)
+		(text "bus_waitReq" (rect 0 0 62 12)(font "Arial" ))
+		(text "bus_waitReq" (rect 80 152 92 214)(font "Arial" )(vertical))
+		(line (pt 88 240)(pt 88 224))
+	)
+	(port
+		(pt 104 240)
+		(input)
+		(text "bus_read_data_valid" (rect 0 0 101 12)(font "Arial" ))
+		(text "bus_read_data_valid" (rect 96 113 108 214)(font "Arial" )(vertical))
+		(line (pt 104 240)(pt 104 224))
+	)
+	(port
+		(pt 120 240)
+		(input)
+		(text "bus_read_data[15..0]" (rect 0 0 103 12)(font "Arial" ))
+		(text "bus_read_data[15..0]" (rect 112 111 124 214)(font "Arial" )(vertical))
+		(line (pt 120 240)(pt 120 223)(line_width 3))
+	)
+	(port
+		(pt 272 136)
+		(input)
+		(text "ext_IRQ" (rect 0 0 41 12)(font "Arial" ))
+		(text "ext_IRQ" (rect 206 128 247 140)(font "Arial" ))
+		(line (pt 256 136)(pt 272 136))
+	)
+	(port
+		(pt 144 0)
+		(output)
+		(text "fifo_wrData[15..0]" (rect 0 0 89 12)(font "Arial" ))
+		(text "fifo_wrData[15..0]" (rect 136 23 148 112)(font "Arial" )(vertical))
+		(line (pt 144 0)(pt 144 15)(line_width 3))
+	)
+	(port
+		(pt 160 0)
+		(output)
+		(text "fifo_wrreq" (rect 0 0 49 12)(font "Arial" ))
+		(text "fifo_wrreq" (rect 152 23 164 72)(font "Arial" )(vertical))
+		(line (pt 160 0)(pt 160 15))
+	)
+	(port
+		(pt 152 240)
+		(output)
+		(text "bus_add[31..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "bus_add[31..0]" (rect 144 143 156 216)(font "Arial" )(vertical))
+		(line (pt 152 240)(pt 152 225)(line_width 3))
+	)
+	(port
+		(pt 168 240)
+		(output)
+		(text "bus_read" (rect 0 0 44 12)(font "Arial" ))
+		(text "bus_read" (rect 160 172 172 216)(font "Arial" )(vertical))
+		(line (pt 168 240)(pt 168 224))
+	)
+	(port
+		(pt 136 240)
+		(output)
+		(text "bus_BE[1..0]" (rect 0 0 63 12)(font "Arial" ))
+		(text "bus_BE[1..0]" (rect 128 153 140 216)(font "Arial" )(vertical))
+		(line (pt 136 240)(pt 136 225)(line_width 3))
+	)
+	(port
+		(pt 184 240)
+		(output)
+		(text "bus_burstCount[7..0]" (rect 0 0 103 12)(font "Arial" ))
+		(text "bus_burstCount[7..0]" (rect 176 113 188 216)(font "Arial" )(vertical))
+		(line (pt 184 240)(pt 184 225)(line_width 3))
+	)
+	(port
+		(pt 272 152)
+		(output)
+		(text "am_readOK" (rect 0 0 57 12)(font "Arial" ))
+		(text "am_readOK" (rect 203 147 251 159)(font "Arial" ))
+		(line (pt 272 152)(pt 256 152))
+	)
+	(drawing
+		(rectangle (rect 16 16 256 224))
+	)
+)

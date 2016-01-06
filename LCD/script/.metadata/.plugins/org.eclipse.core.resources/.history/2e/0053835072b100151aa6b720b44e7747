@@ -1,0 +1,62 @@
+package converter;
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+
+import javax.imageio.ImageIO;
+
+public class bitMap {
+	
+	public static void main(String[] args) {
+		BufferedImage im = null;
+		try {
+			im = ImageIO.read(new File("house.png"));
+			int h = im.getHeight(); 
+			int w = im.getWidth();
+			FileWriter writer = new FileWriter("house");
+			System.out.print("uint16_t iframe[" + h + "*" + w + "] = { ");
+			writer.write(h + "\n");
+			writer.write(w + "\n");
+			for(int i = 0; i < h; i++) {
+				for(int j = 0; j < w; j++){
+					int rgb = im.getRGB(j, i);
+					int r = (rgb >> 16)&0xff;
+					r = (r*31)/255;
+					int g = (rgb >> 8)&0xff;
+					g = (g*63)/255;
+					int b = (rgb)& 0xff;
+					b = (b*31)/255;
+					writer.write( (r<<11)+(g<<5)+b + "\n");
+				}
+			}
+			writer.close();
+			System.out.print("uint16_t iframe[" + h + "*" + w + "] = { ");
+			for(int i = 0; i < h; i++) {
+				for(int j = 0; j < w; j++){
+					int rgb = im.getRGB(j, i);
+					int r = (rgb >> 16)&0xff;
+					r = (r*31)/255;
+					int g = (rgb >> 10)&0xff;
+					g = (g*63)/255;
+					int b = (rgb)& 0xff;
+					b = (b*31)/255;
+					System.out.print( "(" + " " + r + " " + g + " " + b +"), ");
+				}
+				System.out.print("\n");
+			}
+			System.out.print("};");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+}

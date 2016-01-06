@@ -1,0 +1,6 @@
+08:38:33 **** Clean-only build of configuration Nios II for project TstLCD_bsp ****
+make clean 
+[BSP clean complete]
+
+08:38:33 Build Finished (took 203ms)
+

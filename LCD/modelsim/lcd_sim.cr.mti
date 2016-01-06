@@ -1,0 +1,70 @@
+Z:/ES/LCD/quartus/tb_lcd.vhd {1 {vcom -work work -2002 -explicit -stats=none {Z:\ES\LCD\quartus\tb_lcd.vhd}
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Loading package conversion_util
+-- Compiling entity tb_lcd
+-- Compiling architecture test of tb_lcd
+-- Loading entity LCD
+
+} {} {}} Z:/ES/LCD/quartus/master.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/ES/LCD/quartus/master.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity master
+-- Compiling architecture implementation of master
+
+} {} {}} Z:/ES/LCD/quartus/fifo.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/ES/LCD/quartus/fifo.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity fifo
+-- Compiling architecture SYN of fifo
+
+} {} {}} Z:/ES/LCD/quartus/DE0_Nano_top_level.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/ES/LCD/quartus/DE0_Nano_top_level.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity DE0_Nano_top_level
+-- Compiling architecture rtl of DE0_Nano_top_level
+
+} {} {}} Z:/ES/LCD/quartus/LCD.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/ES/LCD/quartus/LCD.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity LCD
+-- Compiling architecture bdf_type of LCD
+
+} {} {}} Z:/ES/LCD/quartus/conversion_util.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/ES/LCD/quartus/conversion_util.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package conversion_util
+-- Compiling package body conversion_util
+-- Loading package conversion_util
+
+} {} {}} Z:/ES/LCD/quartus/slave.vhd {1 {vcom -work work -2002 -explicit -stats=none Z:/ES/LCD/quartus/slave.vhd
+Model Technology ModelSim ALTERA vcom 10.3c Compiler 2014.09 Sep 20 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity slave
+-- Compiling architecture implementation of slave
+
+} {} {}}

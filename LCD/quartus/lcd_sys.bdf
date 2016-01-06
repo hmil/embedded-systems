@@ -1,0 +1,186 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 192 280 360 296)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "clk" (rect 40 0 54 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 192 440 368 456)
+	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
+	(text "lcd_wr" (rect 56 0 86 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 176 8)(pt 124 8))
+		(line (pt 124 4)(pt 98 4))
+		(line (pt 124 12)(pt 98 12))
+		(line (pt 124 12)(pt 124 4))
+		(line (pt 98 4)(pt 94 8))
+		(line (pt 94 8)(pt 98 12))
+		(line (pt 98 12)(pt 94 8))
+	)
+	(flipy)
+)
+(pin
+	(output)
+	(rect 192 400 368 416)
+	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
+	(text "lcd_rd" (rect 57 0 86 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 176 8)(pt 124 8))
+		(line (pt 124 4)(pt 98 4))
+		(line (pt 124 12)(pt 98 12))
+		(line (pt 124 12)(pt 124 4))
+		(line (pt 98 4)(pt 94 8))
+		(line (pt 94 8)(pt 98 12))
+		(line (pt 98 12)(pt 94 8))
+	)
+	(flipy)
+)
+(pin
+	(output)
+	(rect 192 360 368 376)
+	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
+	(text "lcd_dc" (rect 55 0 86 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 176 8)(pt 124 8))
+		(line (pt 124 4)(pt 98 4))
+		(line (pt 124 12)(pt 98 12))
+		(line (pt 124 12)(pt 124 4))
+		(line (pt 98 4)(pt 94 8))
+		(line (pt 94 8)(pt 98 12))
+		(line (pt 98 12)(pt 94 8))
+	)
+	(flipy)
+)
+(symbol
+	(rect 448 216 768 480)
+	(text "full_sys" (rect 137 -1 188 15)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 248 25 260)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 37 14)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 41 75)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 128 72))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "lcd_data_lcd_data[15..0]" (rect 0 0 139 14)(font "Arial" (font_size 8)))
+		(text "lcd_data_lcd_data[15..0]" (rect 4 101 143 115)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 128 112)(line_width 3))
+	)
+	(port
+		(pt 0 152)
+		(output)
+		(text "lcd_dc_lcd_dc" (rect 0 0 82 14)(font "Arial" (font_size 8)))
+		(text "lcd_dc_lcd_dc" (rect 4 141 86 155)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 128 152))
+	)
+	(port
+		(pt 0 192)
+		(output)
+		(text "lcd_rd_lcd_rd" (rect 0 0 77 14)(font "Arial" (font_size 8)))
+		(text "lcd_rd_lcd_rd" (rect 4 181 81 195)(font "Arial" (font_size 8)))
+		(line (pt 0 192)(pt 128 192))
+	)
+	(port
+		(pt 0 232)
+		(output)
+		(text "lcd_wr_lcd_wr" (rect 0 0 87 14)(font "Arial" (font_size 8)))
+		(text "lcd_wr_lcd_wr" (rect 4 221 91 235)(font "Arial" (font_size 8)))
+		(line (pt 0 232)(pt 128 232))
+	)
+	(drawing
+		(text "clk" (rect 113 43 130 58)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 133 67 147 79)(font "Arial" (color 0 0 0)))
+		(text "lcd_data" (rect 80 83 135 98)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "lcd_data" (rect 133 107 174 119)(font "Arial" (color 0 0 0)))
+		(text "lcd_dc" (rect 92 123 134 138)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "lcd_dc" (rect 133 147 164 159)(font "Arial" (color 0 0 0)))
+		(text "lcd_rd" (rect 93 163 133 178)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "lcd_rd" (rect 133 187 162 199)(font "Arial" (color 0 0 0)))
+		(text "lcd_wr" (rect 90 203 132 218)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "lcd_wr" (rect 133 227 163 239)(font "Arial" (color 0 0 0)))
+		(text " full_sys " (rect 282 248 329 260)(font "Arial" ))
+		(line (pt 128 32)(pt 192 32))
+		(line (pt 192 32)(pt 192 248))
+		(line (pt 128 248)(pt 192 248))
+		(line (pt 128 32)(pt 128 248))
+		(line (pt 129 52)(pt 129 76))
+		(line (pt 130 52)(pt 130 76))
+		(line (pt 129 92)(pt 129 116))
+		(line (pt 130 92)(pt 130 116))
+		(line (pt 129 132)(pt 129 156))
+		(line (pt 130 132)(pt 130 156))
+		(line (pt 129 172)(pt 129 196))
+		(line (pt 130 172)(pt 130 196))
+		(line (pt 129 212)(pt 129 236))
+		(line (pt 130 212)(pt 130 236))
+		(line (pt 0 0)(pt 320 0))
+		(line (pt 320 0)(pt 320 264))
+		(line (pt 0 264)(pt 320 264))
+		(line (pt 0 0)(pt 0 264))
+	)
+)
+(connector
+	(pt 448 368)
+	(pt 368 368)
+)
+(connector
+	(pt 448 408)
+	(pt 368 408)
+)
+(connector
+	(pt 448 448)
+	(pt 368 448)
+)
+(connector
+	(pt 360 288)
+	(pt 448 288)
+)
+(connector
+	(pt 120 328)
+	(pt 448 328)
+	(bus)
+)
+(connector
+	(pt 120 328)
+	(pt 120 248)
+	(bus)
+)

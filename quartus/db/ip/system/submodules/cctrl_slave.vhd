@@ -69,6 +69,8 @@ begin
 			end case;
 		end if;
 	end if;
+	rCtl(3 downto 0) <= "0000";
+	rCtl(15 downto 9) <= "0000000";
 end process pRegWr;
 
 -- Registers read

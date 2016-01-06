@@ -1,0 +1,86 @@
+
+State Machine - |DE0_Nano_top_level|full_sys:u0|full_sys_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:sdram_controller_0_s1_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |DE0_Nano_top_level|full_sys:u0|full_sys_sdram_controller_0:sdram_controller_0|m_next
+Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 
+m_next.000000001 0 0 0 0 
+m_next.000001000 0 0 1 1 
+m_next.000010000 0 1 0 1 
+m_next.010000000 1 0 0 1 
+
+State Machine - |DE0_Nano_top_level|full_sys:u0|full_sys_sdram_controller_0:sdram_controller_0|m_state
+Name m_state.100000000 m_state.010000000 m_state.001000000 m_state.000100000 m_state.000010000 m_state.000001000 m_state.000000100 m_state.000000010 m_state.000000001 
+m_state.000000001 0 0 0 0 0 0 0 0 0 
+m_state.000000010 0 0 0 0 0 0 0 1 1 
+m_state.000000100 0 0 0 0 0 0 1 0 1 
+m_state.000001000 0 0 0 0 0 1 0 0 1 
+m_state.000010000 0 0 0 0 1 0 0 0 1 
+m_state.000100000 0 0 0 1 0 0 0 0 1 
+m_state.001000000 0 0 1 0 0 0 0 0 1 
+m_state.010000000 0 1 0 0 0 0 0 0 1 
+m_state.100000000 1 0 0 0 0 0 0 0 1 
+
+State Machine - |DE0_Nano_top_level|full_sys:u0|full_sys_sdram_controller_0:sdram_controller_0|i_next
+Name i_next.111 i_next.101 i_next.010 i_next.000 
+i_next.000 0 0 0 0 
+i_next.010 0 0 1 1 
+i_next.101 0 1 0 1 
+i_next.111 1 0 0 1 
+
+State Machine - |DE0_Nano_top_level|full_sys:u0|full_sys_sdram_controller_0:sdram_controller_0|i_state
+Name i_state.111 i_state.101 i_state.011 i_state.010 i_state.001 i_state.000 
+i_state.000 0 0 0 0 0 0 
+i_state.001 0 0 0 0 1 1 
+i_state.010 0 0 0 1 0 1 
+i_state.011 0 0 1 0 0 1 
+i_state.101 0 1 0 0 0 1 
+i_state.111 1 0 0 0 0 1 
+
+State Machine - |DE0_Nano_top_level|full_sys:u0|full_sys_nios2_qsys_0:nios2_qsys_0|full_sys_nios2_qsys_0_nios2_oci:the_full_sys_nios2_qsys_0_nios2_oci|full_sys_nios2_qsys_0_jtag_debug_module_wrapper:the_full_sys_nios2_qsys_0_jtag_debug_module_wrapper|full_sys_nios2_qsys_0_jtag_debug_module_tck:the_full_sys_nios2_qsys_0_jtag_debug_module_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 
+
+State Machine - |DE0_Nano_top_level|full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state
+Name state.PIPE state.DEPILE_6 state.DEPILE_5 state.DEPILE_4 state.DEPILE_3 state.DEPILE_2 state.DEPILE state.RESET_PAGE_3 state.RESET_PAGE_2 state.RESET_PAGE_1 state.RESET_COL_3 state.RESET_COL_2 state.RESET_COL_1 state.WAIT_STATE state.INIT 
+state.INIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.WAIT_STATE 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.RESET_COL_1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.RESET_COL_2 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.RESET_COL_3 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.RESET_PAGE_1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.RESET_PAGE_2 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.RESET_PAGE_3 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.DEPILE 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.DEPILE_2 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.DEPILE_3 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.DEPILE_4 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.DEPILE_5 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DEPILE_6 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.PIPE 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |DE0_Nano_top_level|full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|state
+Name state.LCD_CONTROL state.WRITE_STATE state.WAIT_STATE 
+state.WAIT_STATE 0 0 0 
+state.WRITE_STATE 0 1 1 
+state.LCD_CONTROL 1 0 1 
+
+State Machine - |DE0_Nano_top_level|full_sys:u0|LCD:lcd_sys_0|master:b2v_inst|state
+Name state.ACK state.OFFSET_STATE state.RCV_DATA state.BUS_REQ state.WAIT_SPACE state.READ_INIT state.WAIT_STATE state.INIT 
+state.INIT 0 0 0 0 0 0 0 0 
+state.WAIT_STATE 0 0 0 0 0 0 1 1 
+state.READ_INIT 0 0 0 0 0 1 0 1 
+state.WAIT_SPACE 0 0 0 0 1 0 0 1 
+state.BUS_REQ 0 0 0 1 0 0 0 1 
+state.RCV_DATA 0 0 1 0 0 0 0 1 
+state.OFFSET_STATE 0 1 0 0 0 0 0 1 
+state.ACK 1 0 0 0 0 0 0 1 

@@ -1,0 +1,16 @@
+08:31:17 **** Build of configuration Nios II for project LCD ****
+make all 
+Info: Building ../LCD_bsp/
+C:/altera/14.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../LCD_bsp/
+[BSP build complete]
+Info: Linking LCD.elf
+nios2-elf-g++  -T'../LCD_bsp//linker.x' -msys-crt0='../LCD_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../LCD_bsp/  -msmallc  -Wl,-Map=LCD.map   -Os -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx  -o LCD.elf obj/default/hello_world_small.o -lm 
+../LCD_bsp/\libhal_bsp.a(alt_putstr.o): In function `alt_putstr':
+Z:\ES\LCD\quartus\software\LCD_bsp/HAL/src/alt_putstr.c:51: undefined reference to `null'
+Z:\ES\LCD\quartus\software\LCD_bsp/HAL/src/alt_putstr.c:51: undefined reference to `null'
+Z:\ES\LCD\quartus\software\LCD_bsp/HAL/src/alt_putstr.c:51: undefined reference to `ALT_MODULE_CLASS_null_write'
+collect2.exe: error: ld returned 1 exit status
+make: *** [LCD.elf] Error 1
+
+08:31:19 Build Finished (took 2s.216ms)
+

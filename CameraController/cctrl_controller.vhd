@@ -32,7 +32,7 @@ architecture cctrl_controller of cctrl_controller is
   signal nextS: State;
 
 
-  signal buffer_nb: std_logic_vector(1 downto 0); -- TODO: unused
+  signal buffer_nb: std_logic_vector(1 downto 0);
   signal buffer_read: std_logic_vector(1 downto 0);
   signal next_buffer_read: std_logic_vector(1 downto 0);
   signal buffer_write: std_logic_vector(1 downto 0);
@@ -44,8 +44,26 @@ begin
 
   WriteAddr <= std_logic_vector(resize(unsigned(BufferAddr) + unsigned(FrameLength) * unsigned(buffer_write), 32));
   ReadAddr  <= std_logic_vector(resize(unsigned(BufferAddr) + unsigned(FrameLength) * unsigned(buffer_read), 32));
-  next_buffer_read <= std_logic_vector(unsigned(buffer_read) + 1);
-  next_buffer_write <= std_logic_vector(unsigned(buffer_write) + 1);
+
+  buffer_nb <= "10"; -- 3 - 1
+
+  process(buffer_read, buffer_nb)
+  begin
+    if buffer_read = buffer_nb then
+      next_buffer_read <= "00";
+    else
+      next_buffer_read <= std_logic_vector(unsigned(buffer_read) + 1);
+    end if;
+  end process;
+
+  process(buffer_write, buffer_nb)
+  begin
+    if buffer_write = buffer_nb then
+      next_buffer_write <= "00";
+    else
+      next_buffer_write <= std_logic_vector(unsigned(buffer_write) + 1);
+    end if;
+  end process;
 
   process(buffer_read, buffer_write)
   begin

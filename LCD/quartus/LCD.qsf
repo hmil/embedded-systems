@@ -1,0 +1,1481 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, the Altera Quartus II License Agreement,
+# the Altera MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Altera and sold by Altera or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 14.1.0 Build 186 12/03/2014 SJ Web Edition
+# Date created = 18:07:17  December 01, 2015
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		LCD_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE22F17C6
+set_global_assignment -name TOP_LEVEL_ENTITY DE0_Nano_top_level
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:07:17  DECEMBER 01, 2015"
+set_global_assignment -name LAST_QUARTUS_VERSION 14.1.0
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name EDA_SIMULATION_TOOL "<None>"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT NONE -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 256
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
+set_location_assignment PIN_R8 -to CLOCK_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
+set_location_assignment PIN_A15 -to LED[0]
+set_location_assignment PIN_A13 -to LED[1]
+set_location_assignment PIN_B13 -to LED[2]
+set_location_assignment PIN_A11 -to LED[3]
+set_location_assignment PIN_D1 -to LED[4]
+set_location_assignment PIN_F3 -to LED[5]
+set_location_assignment PIN_B1 -to LED[6]
+set_location_assignment PIN_L3 -to LED[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED[7]
+set_location_assignment PIN_J15 -to KEY_N[0]
+set_location_assignment PIN_E1 -to KEY_N[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY_N[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY_N[1]
+set_location_assignment PIN_M1 -to SW[0]
+set_location_assignment PIN_T8 -to SW[1]
+set_location_assignment PIN_B9 -to SW[2]
+set_location_assignment PIN_M15 -to SW[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[3]
+set_location_assignment PIN_M7 -to DRAM_BA[0]
+set_location_assignment PIN_M6 -to DRAM_BA[1]
+set_location_assignment PIN_R6 -to DRAM_DQM[0]
+set_location_assignment PIN_T5 -to DRAM_DQM[1]
+set_location_assignment PIN_L2 -to DRAM_RAS_N
+set_location_assignment PIN_L1 -to DRAM_CAS_N
+set_location_assignment PIN_L7 -to DRAM_CKE
+set_location_assignment PIN_R4 -to DRAM_CLK
+set_location_assignment PIN_C2 -to DRAM_WE_N
+set_location_assignment PIN_P6 -to DRAM_CS_N
+set_location_assignment PIN_G2 -to DRAM_DQ[0]
+set_location_assignment PIN_G1 -to DRAM_DQ[1]
+set_location_assignment PIN_L8 -to DRAM_DQ[2]
+set_location_assignment PIN_K5 -to DRAM_DQ[3]
+set_location_assignment PIN_K2 -to DRAM_DQ[4]
+set_location_assignment PIN_J2 -to DRAM_DQ[5]
+set_location_assignment PIN_J1 -to DRAM_DQ[6]
+set_location_assignment PIN_R7 -to DRAM_DQ[7]
+set_location_assignment PIN_T4 -to DRAM_DQ[8]
+set_location_assignment PIN_T2 -to DRAM_DQ[9]
+set_location_assignment PIN_T3 -to DRAM_DQ[10]
+set_location_assignment PIN_R3 -to DRAM_DQ[11]
+set_location_assignment PIN_R5 -to DRAM_DQ[12]
+set_location_assignment PIN_P3 -to DRAM_DQ[13]
+set_location_assignment PIN_N3 -to DRAM_DQ[14]
+set_location_assignment PIN_K1 -to DRAM_DQ[15]
+set_location_assignment PIN_P2 -to DRAM_ADDR[0]
+set_location_assignment PIN_N5 -to DRAM_ADDR[1]
+set_location_assignment PIN_N6 -to DRAM_ADDR[2]
+set_location_assignment PIN_M8 -to DRAM_ADDR[3]
+set_location_assignment PIN_P8 -to DRAM_ADDR[4]
+set_location_assignment PIN_T7 -to DRAM_ADDR[5]
+set_location_assignment PIN_N8 -to DRAM_ADDR[6]
+set_location_assignment PIN_T6 -to DRAM_ADDR[7]
+set_location_assignment PIN_R1 -to DRAM_ADDR[8]
+set_location_assignment PIN_P1 -to DRAM_ADDR[9]
+set_location_assignment PIN_N2 -to DRAM_ADDR[10]
+set_location_assignment PIN_N1 -to DRAM_ADDR[11]
+set_location_assignment PIN_L4 -to DRAM_ADDR[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQM[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQM[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_RAS_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CAS_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CKE
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_WE_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_CS_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[12]
+set_location_assignment PIN_H2 -to EPCS_DATA0
+set_location_assignment PIN_H1 -to EPCS_DCLK
+set_location_assignment PIN_D2 -to EPCS_NCSO
+set_location_assignment PIN_C1 -to EPCS_ASDO
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to EPCS_DATA0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to EPCS_DCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to EPCS_NCSO
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to EPCS_ASDO
+set_location_assignment PIN_F2 -to I2C_SCLK
+set_location_assignment PIN_F1 -to I2C_SDAT
+set_location_assignment PIN_G5 -to G_SENSOR_CS_N
+set_location_assignment PIN_M2 -to G_SENSOR_INT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to I2C_SCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to I2C_SDAT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to G_SENSOR_CS_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to G_SENSOR_INT
+set_location_assignment PIN_A10 -to ADC_CS_N
+set_location_assignment PIN_B10 -to ADC_SADDR
+set_location_assignment PIN_B14 -to ADC_SCLK
+set_location_assignment PIN_A9 -to ADC_SDAT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CS_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_SADDR
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_SCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_SDAT
+set_location_assignment PIN_A14 -to GPIO_2[0]
+set_location_assignment PIN_B16 -to GPIO_2[1]
+set_location_assignment PIN_C14 -to GPIO_2[2]
+set_location_assignment PIN_C16 -to GPIO_2[3]
+set_location_assignment PIN_C15 -to GPIO_2[4]
+set_location_assignment PIN_D16 -to GPIO_2[5]
+set_location_assignment PIN_D15 -to GPIO_2[6]
+set_location_assignment PIN_D14 -to GPIO_2[7]
+set_location_assignment PIN_F15 -to GPIO_2[8]
+set_location_assignment PIN_F16 -to GPIO_2[9]
+set_location_assignment PIN_F14 -to GPIO_2[10]
+set_location_assignment PIN_G16 -to GPIO_2[11]
+set_location_assignment PIN_G15 -to GPIO_2[12]
+set_location_assignment PIN_E15 -to GPIO_2_IN[0]
+set_location_assignment PIN_E16 -to GPIO_2_IN[1]
+set_location_assignment PIN_M16 -to GPIO_2_IN[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_IN[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_IN[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_IN[2]
+set_location_assignment PIN_D3 -to GPIO_0[0]
+set_location_assignment PIN_C3 -to GPIO_0[1]
+set_location_assignment PIN_A2 -to GPIO_0[2]
+set_location_assignment PIN_A3 -to GPIO_0[3]
+set_location_assignment PIN_B3 -to GPIO_0[4]
+set_location_assignment PIN_B4 -to GPIO_0[5]
+set_location_assignment PIN_A4 -to GPIO_0[6]
+set_location_assignment PIN_B5 -to GPIO_0[7]
+set_location_assignment PIN_A5 -to GPIO_0[8]
+set_location_assignment PIN_D5 -to GPIO_0[9]
+set_location_assignment PIN_B6 -to GPIO_0[10]
+set_location_assignment PIN_A6 -to GPIO_0[11]
+set_location_assignment PIN_B7 -to GPIO_0[12]
+set_location_assignment PIN_D6 -to GPIO_0[13]
+set_location_assignment PIN_A7 -to GPIO_0[14]
+set_location_assignment PIN_C6 -to GPIO_0[15]
+set_location_assignment PIN_C8 -to GPIO_0[16]
+set_location_assignment PIN_E6 -to GPIO_0[17]
+set_location_assignment PIN_E7 -to GPIO_0[18]
+set_location_assignment PIN_D8 -to GPIO_0[19]
+set_location_assignment PIN_E8 -to GPIO_0[20]
+set_location_assignment PIN_F8 -to GPIO_0[21]
+set_location_assignment PIN_F9 -to GPIO_0[22]
+set_location_assignment PIN_E9 -to GPIO_0[23]
+set_location_assignment PIN_C9 -to GPIO_0[24]
+set_location_assignment PIN_D9 -to GPIO_0[25]
+set_location_assignment PIN_E11 -to GPIO_0[26]
+set_location_assignment PIN_E10 -to GPIO_0[27]
+set_location_assignment PIN_C11 -to GPIO_0[28]
+set_location_assignment PIN_B11 -to GPIO_0[29]
+set_location_assignment PIN_A12 -to GPIO_0[30]
+set_location_assignment PIN_D11 -to GPIO_0[31]
+set_location_assignment PIN_D12 -to GPIO_0[32]
+set_location_assignment PIN_B12 -to GPIO_0[33]
+set_location_assignment PIN_A8 -to GPIO_0_IN[0]
+set_location_assignment PIN_B8 -to GPIO_0_IN[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[16]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[17]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[18]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[19]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[20]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[21]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[22]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[23]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[24]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[25]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[26]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[27]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[28]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[29]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[30]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[31]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[32]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0[33]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_IN[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_IN[1]
+set_location_assignment PIN_F13 -to GPIO_1[0]
+set_location_assignment PIN_T15 -to GPIO_1[1]
+set_location_assignment PIN_T14 -to GPIO_1[2]
+set_location_assignment PIN_T13 -to GPIO_1[3]
+set_location_assignment PIN_R13 -to GPIO_1[4]
+set_location_assignment PIN_T12 -to GPIO_1[5]
+set_location_assignment PIN_R12 -to GPIO_1[6]
+set_location_assignment PIN_T11 -to GPIO_1[7]
+set_location_assignment PIN_T10 -to GPIO_1[8]
+set_location_assignment PIN_R11 -to GPIO_1[9]
+set_location_assignment PIN_P11 -to GPIO_1[10]
+set_location_assignment PIN_R10 -to GPIO_1[11]
+set_location_assignment PIN_N12 -to GPIO_1[12]
+set_location_assignment PIN_P9 -to GPIO_1[13]
+set_location_assignment PIN_N9 -to GPIO_1[14]
+set_location_assignment PIN_N11 -to GPIO_1[15]
+set_location_assignment PIN_L16 -to GPIO_1[16]
+set_location_assignment PIN_K16 -to GPIO_1[17]
+set_location_assignment PIN_R16 -to GPIO_1[18]
+set_location_assignment PIN_L15 -to GPIO_1[19]
+set_location_assignment PIN_P15 -to GPIO_1[20]
+set_location_assignment PIN_P16 -to GPIO_1[21]
+set_location_assignment PIN_R14 -to GPIO_1[22]
+set_location_assignment PIN_N16 -to GPIO_1[23]
+set_location_assignment PIN_N15 -to GPIO_1[24]
+set_location_assignment PIN_P14 -to GPIO_1[25]
+set_location_assignment PIN_L14 -to GPIO_1[26]
+set_location_assignment PIN_N14 -to GPIO_1[27]
+set_location_assignment PIN_M10 -to GPIO_1[28]
+set_location_assignment PIN_L13 -to GPIO_1[29]
+set_location_assignment PIN_J16 -to GPIO_1[30]
+set_location_assignment PIN_K15 -to GPIO_1[31]
+set_location_assignment PIN_J13 -to GPIO_1[32]
+set_location_assignment PIN_J14 -to GPIO_1[33]
+set_location_assignment PIN_T9 -to GPIO_1_IN[0]
+set_location_assignment PIN_R9 -to GPIO_1_IN[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[16]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[17]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[18]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[19]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[20]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[21]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[22]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[23]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[24]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[25]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[26]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[27]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[28]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[29]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[30]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[31]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[32]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1[33]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_IN[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_IN[1]
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_A15 -to LED_0
+set_location_assignment PIN_A13 -to LED_1
+set_location_assignment PIN_B13 -to LED_2
+set_location_assignment PIN_A11 -to LED_3
+set_location_assignment PIN_D1 -to LED_4
+set_location_assignment PIN_F3 -to LED_5
+set_location_assignment PIN_B1 -to LED_6
+set_location_assignment PIN_L3 -to LED_7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_6
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED_7
+set_location_assignment PIN_J15 -to KEY_N_0
+set_location_assignment PIN_E1 -to KEY_N_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY_N_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY_N_1
+set_location_assignment PIN_M1 -to SW_0
+set_location_assignment PIN_T8 -to SW_1
+set_location_assignment PIN_B9 -to SW_2
+set_location_assignment PIN_M15 -to SW_3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW_2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW_3
+set_location_assignment PIN_M7 -to DRAM_BA_0
+set_location_assignment PIN_M6 -to DRAM_BA_1
+set_location_assignment PIN_R6 -to DRAM_DQM_0
+set_location_assignment PIN_T5 -to DRAM_DQM_1
+set_location_assignment PIN_G2 -to DRAM_DQ_0
+set_location_assignment PIN_G1 -to DRAM_DQ_1
+set_location_assignment PIN_L8 -to DRAM_DQ_2
+set_location_assignment PIN_K5 -to DRAM_DQ_3
+set_location_assignment PIN_K2 -to DRAM_DQ_4
+set_location_assignment PIN_J2 -to DRAM_DQ_5
+set_location_assignment PIN_J1 -to DRAM_DQ_6
+set_location_assignment PIN_R7 -to DRAM_DQ_7
+set_location_assignment PIN_T4 -to DRAM_DQ_8
+set_location_assignment PIN_T2 -to DRAM_DQ_9
+set_location_assignment PIN_T3 -to DRAM_DQ_10
+set_location_assignment PIN_R3 -to DRAM_DQ_11
+set_location_assignment PIN_R5 -to DRAM_DQ_12
+set_location_assignment PIN_P3 -to DRAM_DQ_13
+set_location_assignment PIN_N3 -to DRAM_DQ_14
+set_location_assignment PIN_K1 -to DRAM_DQ_15
+set_location_assignment PIN_P2 -to DRAM_ADDR_0
+set_location_assignment PIN_N5 -to DRAM_ADDR_1
+set_location_assignment PIN_N6 -to DRAM_ADDR_2
+set_location_assignment PIN_M8 -to DRAM_ADDR_3
+set_location_assignment PIN_P8 -to DRAM_ADDR_4
+set_location_assignment PIN_T7 -to DRAM_ADDR_5
+set_location_assignment PIN_N8 -to DRAM_ADDR_6
+set_location_assignment PIN_T6 -to DRAM_ADDR_7
+set_location_assignment PIN_R1 -to DRAM_ADDR_8
+set_location_assignment PIN_P1 -to DRAM_ADDR_9
+set_location_assignment PIN_N2 -to DRAM_ADDR_10
+set_location_assignment PIN_N1 -to DRAM_ADDR_11
+set_location_assignment PIN_L4 -to DRAM_ADDR_12
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_BA_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQM_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQM_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_6
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_8
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_9
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_10
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_11
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_12
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_13
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_14
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_DQ_15
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR_2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR_3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR_4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR_5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR_6
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR_7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR_8
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR_9
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR_10
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR_11
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR_12
+set_location_assignment PIN_A14 -to GPIO_2_0
+set_location_assignment PIN_B16 -to GPIO_2_1
+set_location_assignment PIN_C14 -to GPIO_2_2
+set_location_assignment PIN_C16 -to GPIO_2_3
+set_location_assignment PIN_C15 -to GPIO_2_4
+set_location_assignment PIN_D16 -to GPIO_2_5
+set_location_assignment PIN_D15 -to GPIO_2_6
+set_location_assignment PIN_D14 -to GPIO_2_7
+set_location_assignment PIN_F15 -to GPIO_2_8
+set_location_assignment PIN_F16 -to GPIO_2_9
+set_location_assignment PIN_F14 -to GPIO_2_10
+set_location_assignment PIN_G16 -to GPIO_2_11
+set_location_assignment PIN_G15 -to GPIO_2_12
+set_location_assignment PIN_E15 -to GPIO_2_IN_0
+set_location_assignment PIN_E16 -to GPIO_2_IN_1
+set_location_assignment PIN_M16 -to GPIO_2_IN_2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_6
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_8
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_9
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_10
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_11
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_12
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_IN_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_IN_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_2_IN_2
+set_location_assignment PIN_D3 -to GPIO_0_0
+set_location_assignment PIN_C3 -to GPIO_0_1
+set_location_assignment PIN_A2 -to GPIO_0_2
+set_location_assignment PIN_A3 -to GPIO_0_3
+set_location_assignment PIN_B3 -to GPIO_0_4
+set_location_assignment PIN_B4 -to GPIO_0_5
+set_location_assignment PIN_A4 -to GPIO_0_6
+set_location_assignment PIN_B5 -to GPIO_0_7
+set_location_assignment PIN_A5 -to GPIO_0_8
+set_location_assignment PIN_D5 -to GPIO_0_9
+set_location_assignment PIN_B6 -to GPIO_0_10
+set_location_assignment PIN_A6 -to GPIO_0_11
+set_location_assignment PIN_B7 -to GPIO_0_12
+set_location_assignment PIN_D6 -to GPIO_0_13
+set_location_assignment PIN_A7 -to GPIO_0_14
+set_location_assignment PIN_C6 -to GPIO_0_15
+set_location_assignment PIN_C8 -to GPIO_0_16
+set_location_assignment PIN_E6 -to GPIO_0_17
+set_location_assignment PIN_E7 -to GPIO_0_18
+set_location_assignment PIN_D8 -to GPIO_0_19
+set_location_assignment PIN_E8 -to GPIO_0_20
+set_location_assignment PIN_F8 -to GPIO_0_21
+set_location_assignment PIN_F9 -to GPIO_0_22
+set_location_assignment PIN_E9 -to GPIO_0_23
+set_location_assignment PIN_C9 -to GPIO_0_24
+set_location_assignment PIN_D9 -to GPIO_0_25
+set_location_assignment PIN_E11 -to GPIO_0_26
+set_location_assignment PIN_E10 -to GPIO_0_27
+set_location_assignment PIN_C11 -to GPIO_0_28
+set_location_assignment PIN_B11 -to GPIO_0_29
+set_location_assignment PIN_A12 -to GPIO_0_30
+set_location_assignment PIN_D11 -to GPIO_0_31
+set_location_assignment PIN_D12 -to GPIO_0_32
+set_location_assignment PIN_B12 -to GPIO_0_33
+set_location_assignment PIN_A8 -to GPIO_0_IN_0
+set_location_assignment PIN_B8 -to GPIO_0_IN_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_6
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_8
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_9
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_10
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_11
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_12
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_13
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_14
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_15
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_16
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_17
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_18
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_19
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_20
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_21
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_22
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_23
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_24
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_25
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_26
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_27
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_28
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_29
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_30
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_31
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_32
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_33
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_IN_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_0_IN_1
+set_location_assignment PIN_F13 -to GPIO_1_0
+set_location_assignment PIN_T15 -to GPIO_1_1
+set_location_assignment PIN_T14 -to GPIO_1_2
+set_location_assignment PIN_T13 -to GPIO_1_3
+set_location_assignment PIN_R13 -to GPIO_1_4
+set_location_assignment PIN_T12 -to GPIO_1_5
+set_location_assignment PIN_R12 -to GPIO_1_6
+set_location_assignment PIN_T11 -to GPIO_1_7
+set_location_assignment PIN_T10 -to GPIO_1_8
+set_location_assignment PIN_R11 -to GPIO_1_9
+set_location_assignment PIN_P11 -to GPIO_1_10
+set_location_assignment PIN_R10 -to GPIO_1_11
+set_location_assignment PIN_N12 -to GPIO_1_12
+set_location_assignment PIN_P9 -to GPIO_1_13
+set_location_assignment PIN_N9 -to GPIO_1_14
+set_location_assignment PIN_N11 -to GPIO_1_15
+set_location_assignment PIN_L16 -to GPIO_1_16
+set_location_assignment PIN_K16 -to GPIO_1_17
+set_location_assignment PIN_R16 -to GPIO_1_18
+set_location_assignment PIN_L15 -to GPIO_1_19
+set_location_assignment PIN_P15 -to GPIO_1_20
+set_location_assignment PIN_P16 -to GPIO_1_21
+set_location_assignment PIN_R14 -to GPIO_1_22
+set_location_assignment PIN_N16 -to GPIO_1_23
+set_location_assignment PIN_N15 -to GPIO_1_24
+set_location_assignment PIN_P14 -to GPIO_1_25
+set_location_assignment PIN_L14 -to GPIO_1_26
+set_location_assignment PIN_N14 -to GPIO_1_27
+set_location_assignment PIN_M10 -to GPIO_1_28
+set_location_assignment PIN_L13 -to GPIO_1_29
+set_location_assignment PIN_J16 -to GPIO_1_30
+set_location_assignment PIN_K15 -to GPIO_1_31
+set_location_assignment PIN_J13 -to GPIO_1_32
+set_location_assignment PIN_J14 -to GPIO_1_33
+set_location_assignment PIN_T9 -to GPIO_1_IN_0
+set_location_assignment PIN_R9 -to GPIO_1_IN_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_6
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_8
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_9
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_10
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_11
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_12
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_13
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_14
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_15
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_16
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_17
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_18
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_19
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_20
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_21
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_22
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_23
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_24
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_25
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_26
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_27
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_28
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_29
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_30
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_31
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_32
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_33
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_IN_0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO_1_IN_1
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
+set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334528" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INCREMENTAL_ROUTING=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id auto_signaltap_0
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
+set_global_assignment -name SMART_RECOMPILE OFF
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_global_assignment -name SIGNALTAP_FILE stp1.stp
+set_global_assignment -name VHDL_FILE DE0_Nano_top_level.vhd
+set_global_assignment -name QSYS_FILE ../qsys/full_sys.qsys
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[15] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[7] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[8] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[9] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[10] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[11] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[12] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[13] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[14] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[15] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[16] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_dc" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[17] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_valid" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[18] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[19] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[20] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[21] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[22] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[23] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[24] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[25] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[26] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[27] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[28] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[29] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[30] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[31] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[32] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[33] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[34] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[35] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_almost_empty" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[36] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[37] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[38] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[39] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[40] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[41] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[42] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[43] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[44] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[45] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[46] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[47] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[48] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[49] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[50] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[51] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[52] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|if_ack" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[53] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|if_rdFifo" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[54] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[55] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[56] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[57] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[58] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[59] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[60] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[61] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[62] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[63] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[64] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[65] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[66] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[67] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[68] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[69] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[70] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_dc" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[71] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_rd" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[72] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_wr" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[73] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[74] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[75] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[76] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[77] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[78] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[79] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[80] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[81] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[82] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[83] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[84] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[85] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[86] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[87] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[88] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[89] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[90] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_state" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[91] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.DEPILE" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[92] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.DEPILE_2" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[6] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[7] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[8] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[9] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[10] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[11] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[12] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[13] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[14] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[15] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_data[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[16] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_dc" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[17] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|as_valid" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[18] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[19] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[20] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[21] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[22] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[23] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[24] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[25] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[26] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[27] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[28] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[29] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[30] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[31] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[32] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[33] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[34] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|burst_counter[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[35] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_almost_empty" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[36] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[37] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[38] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[39] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[40] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[41] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[42] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[43] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[44] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[45] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[46] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[47] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[48] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[49] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[50] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[51] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|fifo_data[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[52] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|if_ack" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[53] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|if_rdFifo" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[54] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[55] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[56] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[57] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[58] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[59] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[60] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[61] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[62] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[63] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[64] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[65] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[66] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[67] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[68] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[69] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_data[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[70] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_dc" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[71] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_rd" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[72] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|lcd_wr" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[73] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[74] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[75] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[76] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[77] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[78] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[79] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[80] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[81] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[82] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[83] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[84] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[85] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[86] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[87] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[88] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[89] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_burst_counter[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[90] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|next_state" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[91] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.DEPILE" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[92] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.DEPILE_2" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=512" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=512" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[93] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.DEPILE_3" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[94] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.DEPILE_4" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[95] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.DEPILE_5" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[96] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.DEPILE_6" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[97] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.INIT" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[98] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.PIPE" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[99] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.RESET_COL_1" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[100] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.RESET_COL_2" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[101] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.RESET_COL_3" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[102] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.RESET_PAGE_1" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[103] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.RESET_PAGE_2" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[104] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.RESET_PAGE_3" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[105] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.WAIT_STATE" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[106] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|am_readOK" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[107] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|as_initOk" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[108] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[109] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[110] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[111] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[112] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[113] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[114] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[115] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[116] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[117] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[118] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[119] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[120] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[121] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[122] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[123] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[124] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[125] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_BE[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[126] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_BE[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[127] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[128] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[129] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[130] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[131] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[132] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[133] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[134] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[135] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[17]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[136] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[18]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[137] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[19]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[138] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[139] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[20]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[140] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[21]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[141] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[22]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[142] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[23]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[143] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[24]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[144] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[25]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[145] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[26]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[146] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[27]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[147] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[28]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[148] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[29]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[149] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[150] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[30]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[151] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[31]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[152] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[153] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[154] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[155] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[156] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[157] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[158] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[159] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_beginBurstTransfer" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[160] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[161] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[162] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[163] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[164] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[165] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[166] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[167] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[168] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[169] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[170] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[171] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[172] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[173] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[174] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[175] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[176] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[177] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[178] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[179] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[180] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[181] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[182] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[183] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[184] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[185] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data_valid" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[186] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_waitReq" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[187] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|current_buffer[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[188] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|current_buffer[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[189] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|ext_IRQ" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[190] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_almostFull" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[191] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[192] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[193] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[194] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[195] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[196] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[197] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[198] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[199] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[200] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[201] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[202] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[203] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[204] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[205] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[206] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[207] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrreq" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[208] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[209] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[210] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[211] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[212] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[213] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[214] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[215] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[216] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[217] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[218] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[219] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[220] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[221] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[222] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[223] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[224] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[225] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[226] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.ACK" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[227] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.BUS_REQ" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[228] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.INIT" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[229] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.OFFSET_STATE" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[230] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.RCV_DATA" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[231] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.READ_INIT" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[232] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.WAIT_SPACE" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[233] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.WAIT_STATE" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[234] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[235] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[236] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[237] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[238] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[239] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[240] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[241] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[242] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[17]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[243] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[18]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[244] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[19]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[245] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[246] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[20]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[247] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[21]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[248] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[22]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[249] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[23]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[250] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[24]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[251] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[25]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[252] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[26]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[253] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[27]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[254] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[28]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[255] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[29]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[256] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[257] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[30]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[258] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[31]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[259] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[260] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[261] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[262] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[263] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[264] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[265] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[266] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[267] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[268] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[269] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[270] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[271] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[272] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[273] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[274] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[17]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[275] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[18]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[276] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[19]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[277] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[278] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[20]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[279] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[21]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[280] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[22]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[281] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[23]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[282] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[24]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[283] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[25]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[284] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[26]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[285] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[27]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[286] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[28]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[287] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[29]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[288] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[289] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[30]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[290] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[31]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[291] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[292] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[293] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[294] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[295] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[296] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[297] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[298] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_reg[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[299] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_reg[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[300] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_reg[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[301] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_add[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[302] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_add[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[303] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_add[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[304] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[305] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[306] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[307] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[308] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[309] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[310] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[311] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[312] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[313] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[314] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[315] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[316] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[317] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[318] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[319] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[320] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_valid" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[321] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wait_Request" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[322] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[323] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[324] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[325] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[326] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[327] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[328] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[329] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[330] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[17]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[331] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[18]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[332] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[19]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[333] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[334] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[20]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[335] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[21]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[336] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[22]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[337] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[23]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[338] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[24]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[339] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[25]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[340] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[26]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[341] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[27]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[342] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[28]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[343] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[29]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[344] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[345] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[30]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[346] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[31]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[347] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[348] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[349] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[350] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[351] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[352] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[353] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[354] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_write" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[355] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[356] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[357] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[358] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[359] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[360] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[361] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[362] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[363] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[17]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[364] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[18]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[365] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[19]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[366] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[367] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[20]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[368] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[21]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[369] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[22]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[370] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[23]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[371] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[24]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[372] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[25]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[373] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[26]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[374] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[27]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[375] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[28]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[376] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[29]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[377] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[378] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[30]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[379] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[31]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[380] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[381] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[382] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[383] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[384] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[385] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[386] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[387] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|if_ack" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[93] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.DEPILE_3" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[94] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.DEPILE_4" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[95] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.DEPILE_5" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[96] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.DEPILE_6" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[97] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.INIT" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[98] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.PIPE" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[99] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.RESET_COL_1" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[100] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.RESET_COL_2" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[101] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.RESET_COL_3" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[102] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.RESET_PAGE_1" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[103] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.RESET_PAGE_2" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[104] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.RESET_PAGE_3" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[105] -to "full_sys:u0|LCD:lcd_sys_0|controller:b2v_inst5|state.WAIT_STATE" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[106] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|am_readOK" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[107] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|as_initOk" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[108] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[109] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[110] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[111] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[112] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[113] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[114] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[115] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[116] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[117] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[118] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[119] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[120] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[121] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[122] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[123] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[124] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|burst_counter[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[125] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_BE[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[126] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_BE[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[127] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[128] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[129] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[130] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[131] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[132] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[133] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[134] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[135] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[17]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[136] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[18]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[137] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[19]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[138] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[139] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[20]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[140] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[21]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[141] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[22]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[142] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[23]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[143] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[24]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[144] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[25]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[145] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[26]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[146] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[27]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[147] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[28]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[148] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[29]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[149] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[150] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[30]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[151] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[31]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[152] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[153] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[154] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[155] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[156] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[157] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[158] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_add[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[159] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_beginBurstTransfer" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[160] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[161] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[162] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[163] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[164] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[165] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[166] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[167] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_burstCount[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[168] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[169] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[170] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[171] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[172] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[173] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[174] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[175] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[176] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[177] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[178] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[179] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[180] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[181] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[182] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[183] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[184] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[185] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_read_data_valid" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[186] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|bus_waitReq" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[187] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|current_buffer[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[188] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|current_buffer[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[189] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|ext_IRQ" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[190] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_almostFull" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[191] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[192] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[193] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[194] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[195] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[196] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[197] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[198] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[199] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[200] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[201] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[202] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[203] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[204] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[205] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[206] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrData[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[207] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|fifo_wrreq" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[208] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[209] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[210] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[211] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[212] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[213] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[214] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[215] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[216] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[217] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[218] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[219] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[220] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[221] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[222] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[223] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[224] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|offset[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[225] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[226] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.ACK" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[227] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.BUS_REQ" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[228] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.INIT" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[229] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.OFFSET_STATE" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[230] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.RCV_DATA" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[231] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.READ_INIT" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[232] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.WAIT_SPACE" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[233] -to "full_sys:u0|LCD:lcd_sys_0|master:b2v_inst37|state.WAIT_STATE" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[234] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[235] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[236] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[237] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[238] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[239] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[240] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[241] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[242] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[17]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[243] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[18]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[244] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[19]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[245] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[246] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[20]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[247] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[21]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[248] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[22]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[249] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[23]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[250] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[24]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[251] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[25]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[252] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[26]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[253] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[27]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[254] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[28]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[255] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[29]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[256] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[257] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[30]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[258] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[31]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[259] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[260] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[261] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[262] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[263] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[264] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[265] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[266] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[267] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[268] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[269] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[270] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[271] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[272] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[273] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[274] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[17]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[275] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[18]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[276] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[19]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[277] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[278] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[20]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[279] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[21]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[280] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[22]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[281] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[23]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[282] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[24]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[283] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[25]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[284] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[26]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[285] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[27]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[286] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[28]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[287] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[29]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[288] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[289] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[30]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[290] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[31]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[291] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[292] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[293] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[294] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[295] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[296] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[297] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_buf_0_out[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[298] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_reg[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[299] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_reg[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[300] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|add_reg[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[301] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_add[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[302] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_add[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[303] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_add[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[304] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[305] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[306] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[307] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[308] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[309] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[310] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[311] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[312] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[313] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[314] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[315] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[316] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[317] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[318] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[319] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_data[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[320] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_valid" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[321] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wait_Request" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[322] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[323] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[324] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[325] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[326] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[327] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[328] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[329] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[330] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[17]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[331] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[18]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[332] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[19]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[333] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[334] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[20]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[335] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[21]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[336] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[22]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[337] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[23]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[338] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[24]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[339] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[25]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[340] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[26]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[341] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[27]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[342] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[28]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[343] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[29]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[344] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[345] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[30]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[346] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[31]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[347] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[348] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[349] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[350] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[351] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[352] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[353] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_wrdata[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[354] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|as_write" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[355] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[0]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[356] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[10]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[357] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[11]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[358] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[12]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[359] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[13]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[360] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[14]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[361] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[15]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[362] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[16]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[363] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[17]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[364] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[18]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[365] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[19]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[366] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[1]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[367] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[20]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[368] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[21]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[369] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[22]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[370] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[23]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[371] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[24]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[372] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[25]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[373] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[26]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[374] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[27]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[375] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[28]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[376] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[29]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[377] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[2]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[378] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[30]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[379] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[31]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[380] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[3]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[381] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[4]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[382] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[5]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[383] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[6]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[384] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[7]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[385] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[8]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[386] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|data_reg[9]" -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[387] -to "full_sys:u0|LCD:lcd_sys_0|slave:b2v_inst12|if_ack" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=388" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=388" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=388" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to "full_sys:u0|LCD:lcd_sys_0|clk" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[3] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=1187" -section_id auto_signaltap_0
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp
