@@ -19,6 +19,13 @@ entity system is
 		frame_rdy_irq                       : out   std_logic;                                        --               frame_rdy.irq
 		i2c_scl                             : inout std_logic                     := '0';             --                     i2c.scl
 		i2c_sda                             : inout std_logic                     := '0';             --                        .sda
+		lcd_conduit_lcd_data                : out   std_logic_vector(15 downto 0);                    --             lcd_conduit.lcd_data
+		lcd_conduit_lcd_dc                  : out   std_logic;                                        --                        .lcd_dc
+		lcd_conduit_lcd_rd                  : out   std_logic;                                        --                        .lcd_rd
+		lcd_conduit_lcd_wr                  : out   std_logic;                                        --                        .lcd_wr
+		lcd_conduit_lcd_reset_n             : out   std_logic;                                        --                        .lcd_reset_n
+		lcd_controller_ext_irq              : in    std_logic                     := '0';             --          lcd_controller.ext_irq
+		lcd_controller_am_readok            : out   std_logic;                                        --                        .am_readok
 		sdram_clk_clk                       : out   std_logic;                                        --               sdram_clk.clk
 		sdram_wire_addr                     : out   std_logic_vector(12 downto 0);                    --              sdram_wire.addr
 		sdram_wire_ba                       : out   std_logic_vector(1 downto 0);                     --                        .ba
@@ -125,6 +132,31 @@ architecture rtl of system is
 		);
 	end component system_jtag_uart;
 
+	component LCD is
+		port (
+			clk                 : in  std_logic                     := 'X';             -- clk
+			reset_n             : in  std_logic                     := 'X';             -- reset_n
+			as_add              : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- address
+			as_wait_request     : out std_logic;                                        -- waitrequest
+			as_wrdata           : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			as_write            : in  std_logic                     := 'X';             -- write
+			bus_read_data_valid : in  std_logic                     := 'X';             -- readdatavalid
+			bus_waitReq         : in  std_logic                     := 'X';             -- waitrequest
+			bus_read_data       : in  std_logic_vector(15 downto 0) := (others => 'X'); -- readdata
+			bus_read            : out std_logic;                                        -- read
+			bus_add             : out std_logic_vector(31 downto 0);                    -- address
+			bus_BE              : out std_logic_vector(1 downto 0);                     -- byteenable
+			bus_burstCount      : out std_logic_vector(7 downto 0);                     -- burstcount
+			lcd_data            : out std_logic_vector(15 downto 0);                    -- lcd_data
+			lcd_dc              : out std_logic;                                        -- lcd_dc
+			lcd_rd              : out std_logic;                                        -- lcd_rd
+			lcd_wr              : out std_logic;                                        -- lcd_wr
+			lcd_reset_n         : out std_logic;                                        -- lcd_reset_n
+			ext_IRQ             : in  std_logic                     := 'X';             -- ext_irq
+			am_readOK           : out std_logic                                         -- am_readok
+		);
+	end component LCD;
+
 	component system_nios2 is
 		port (
 			clk                                   : in  std_logic                     := 'X';             -- clk
@@ -195,6 +227,13 @@ architecture rtl of system is
 			camera_controller_0_avalon_master_readdatavalid       : out std_logic;                                        -- readdatavalid
 			camera_controller_0_avalon_master_write               : in  std_logic                     := 'X';             -- write
 			camera_controller_0_avalon_master_writedata           : in  std_logic_vector(15 downto 0) := (others => 'X'); -- writedata
+			lcd_sys_0_bus_address                                 : in  std_logic_vector(31 downto 0) := (others => 'X'); -- address
+			lcd_sys_0_bus_waitrequest                             : out std_logic;                                        -- waitrequest
+			lcd_sys_0_bus_burstcount                              : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- burstcount
+			lcd_sys_0_bus_byteenable                              : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- byteenable
+			lcd_sys_0_bus_read                                    : in  std_logic                     := 'X';             -- read
+			lcd_sys_0_bus_readdata                                : out std_logic_vector(15 downto 0);                    -- readdata
+			lcd_sys_0_bus_readdatavalid                           : out std_logic;                                        -- readdatavalid
 			nios2_data_master_address                             : in  std_logic_vector(25 downto 0) := (others => 'X'); -- address
 			nios2_data_master_waitrequest                         : out std_logic;                                        -- waitrequest
 			nios2_data_master_byteenable                          : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- byteenable
@@ -232,6 +271,10 @@ architecture rtl of system is
 			jtag_uart_avalon_jtag_slave_writedata                 : out std_logic_vector(31 downto 0);                    -- writedata
 			jtag_uart_avalon_jtag_slave_waitrequest               : in  std_logic                     := 'X';             -- waitrequest
 			jtag_uart_avalon_jtag_slave_chipselect                : out std_logic;                                        -- chipselect
+			lcd_sys_0_avalon_slave_0_address                      : out std_logic_vector(2 downto 0);                     -- address
+			lcd_sys_0_avalon_slave_0_write                        : out std_logic;                                        -- write
+			lcd_sys_0_avalon_slave_0_writedata                    : out std_logic_vector(31 downto 0);                    -- writedata
+			lcd_sys_0_avalon_slave_0_waitrequest                  : in  std_logic                     := 'X';             -- waitrequest
 			nios2_jtag_debug_module_address                       : out std_logic_vector(8 downto 0);                     -- address
 			nios2_jtag_debug_module_write                         : out std_logic;                                        -- write
 			nios2_jtag_debug_module_read                          : out std_logic;                                        -- read
@@ -393,7 +436,7 @@ architecture rtl of system is
 		);
 	end component system_rst_controller_001;
 
-	signal clocks_sys_clk_clk                                                      : std_logic;                     -- clocks:sys_clk_clk -> [camera_controller_0:Clk, cmos_sensor_output_generator_0:clk, i2c_0:clk, irq_mapper:clk, jtag_uart:clk, mm_interconnect_0:clocks_sys_clk_clk, nios2:clk, rst_controller:clk, sdram:clk]
+	signal clocks_sys_clk_clk                                                      : std_logic;                     -- clocks:sys_clk_clk -> [camera_controller_0:Clk, cmos_sensor_output_generator_0:clk, i2c_0:clk, irq_mapper:clk, jtag_uart:clk, lcd_sys_0:clk, mm_interconnect_0:clocks_sys_clk_clk, nios2:clk, rst_controller:clk, sdram:clk]
 	signal nios2_jtag_debug_module_reset_reset                                     : std_logic;                     -- nios2:jtag_debug_module_resetrequest -> [rst_controller:reset_in0, rst_controller:reset_in1, rst_controller_001:reset_in0]
 	signal camera_controller_0_avalon_master_readdata                              : std_logic_vector(15 downto 0); -- mm_interconnect_0:camera_controller_0_avalon_master_readdata -> camera_controller_0:AM_DataRead
 	signal camera_controller_0_avalon_master_waitrequest                           : std_logic;                     -- mm_interconnect_0:camera_controller_0_avalon_master_waitrequest -> camera_controller_0:AM_WaitRequest
@@ -412,6 +455,13 @@ architecture rtl of system is
 	signal nios2_data_master_read                                                  : std_logic;                     -- nios2:d_read -> mm_interconnect_0:nios2_data_master_read
 	signal nios2_data_master_write                                                 : std_logic;                     -- nios2:d_write -> mm_interconnect_0:nios2_data_master_write
 	signal nios2_data_master_writedata                                             : std_logic_vector(31 downto 0); -- nios2:d_writedata -> mm_interconnect_0:nios2_data_master_writedata
+	signal lcd_sys_0_bus_waitrequest                                               : std_logic;                     -- mm_interconnect_0:lcd_sys_0_bus_waitrequest -> lcd_sys_0:bus_waitReq
+	signal lcd_sys_0_bus_readdata                                                  : std_logic_vector(15 downto 0); -- mm_interconnect_0:lcd_sys_0_bus_readdata -> lcd_sys_0:bus_read_data
+	signal lcd_sys_0_bus_read                                                      : std_logic;                     -- lcd_sys_0:bus_read -> mm_interconnect_0:lcd_sys_0_bus_read
+	signal lcd_sys_0_bus_address                                                   : std_logic_vector(31 downto 0); -- lcd_sys_0:bus_add -> mm_interconnect_0:lcd_sys_0_bus_address
+	signal lcd_sys_0_bus_byteenable                                                : std_logic_vector(1 downto 0);  -- lcd_sys_0:bus_BE -> mm_interconnect_0:lcd_sys_0_bus_byteenable
+	signal lcd_sys_0_bus_readdatavalid                                             : std_logic;                     -- mm_interconnect_0:lcd_sys_0_bus_readdatavalid -> lcd_sys_0:bus_read_data_valid
+	signal lcd_sys_0_bus_burstcount                                                : std_logic_vector(7 downto 0);  -- lcd_sys_0:bus_burstCount -> mm_interconnect_0:lcd_sys_0_bus_burstcount
 	signal nios2_instruction_master_readdata                                       : std_logic_vector(31 downto 0); -- mm_interconnect_0:nios2_instruction_master_readdata -> nios2:i_readdata
 	signal nios2_instruction_master_waitrequest                                    : std_logic;                     -- mm_interconnect_0:nios2_instruction_master_waitrequest -> nios2:i_waitrequest
 	signal nios2_instruction_master_address                                        : std_logic_vector(25 downto 0); -- nios2:i_address -> mm_interconnect_0:nios2_instruction_master_address
@@ -450,6 +500,10 @@ architecture rtl of system is
 	signal mm_interconnect_0_i2c_0_avalon_slave_read                               : std_logic;                     -- mm_interconnect_0:i2c_0_avalon_slave_read -> i2c_0:read
 	signal mm_interconnect_0_i2c_0_avalon_slave_write                              : std_logic;                     -- mm_interconnect_0:i2c_0_avalon_slave_write -> i2c_0:write
 	signal mm_interconnect_0_i2c_0_avalon_slave_writedata                          : std_logic_vector(7 downto 0);  -- mm_interconnect_0:i2c_0_avalon_slave_writedata -> i2c_0:writedata
+	signal mm_interconnect_0_lcd_sys_0_avalon_slave_0_waitrequest                  : std_logic;                     -- lcd_sys_0:as_wait_request -> mm_interconnect_0:lcd_sys_0_avalon_slave_0_waitrequest
+	signal mm_interconnect_0_lcd_sys_0_avalon_slave_0_address                      : std_logic_vector(2 downto 0);  -- mm_interconnect_0:lcd_sys_0_avalon_slave_0_address -> lcd_sys_0:as_add
+	signal mm_interconnect_0_lcd_sys_0_avalon_slave_0_write                        : std_logic;                     -- mm_interconnect_0:lcd_sys_0_avalon_slave_0_write -> lcd_sys_0:as_write
+	signal mm_interconnect_0_lcd_sys_0_avalon_slave_0_writedata                    : std_logic_vector(31 downto 0); -- mm_interconnect_0:lcd_sys_0_avalon_slave_0_writedata -> lcd_sys_0:as_wrdata
 	signal mm_interconnect_0_nios2_jtag_debug_module_readdata                      : std_logic_vector(31 downto 0); -- nios2:jtag_debug_module_readdata -> mm_interconnect_0:nios2_jtag_debug_module_readdata
 	signal mm_interconnect_0_nios2_jtag_debug_module_waitrequest                   : std_logic;                     -- nios2:jtag_debug_module_waitrequest -> mm_interconnect_0:nios2_jtag_debug_module_waitrequest
 	signal mm_interconnect_0_nios2_jtag_debug_module_debugaccess                   : std_logic;                     -- mm_interconnect_0:nios2_jtag_debug_module_debugaccess -> nios2:jtag_debug_module_debugaccess
@@ -468,7 +522,7 @@ architecture rtl of system is
 	signal mm_interconnect_0_sdram_s1_write_ports_inv                              : std_logic;                     -- mm_interconnect_0_sdram_s1_write:inv -> sdram:az_wr_n
 	signal mm_interconnect_0_jtag_uart_avalon_jtag_slave_read_ports_inv            : std_logic;                     -- mm_interconnect_0_jtag_uart_avalon_jtag_slave_read:inv -> jtag_uart:av_read_n
 	signal mm_interconnect_0_jtag_uart_avalon_jtag_slave_write_ports_inv           : std_logic;                     -- mm_interconnect_0_jtag_uart_avalon_jtag_slave_write:inv -> jtag_uart:av_write_n
-	signal rst_controller_reset_out_reset_ports_inv                                : std_logic;                     -- rst_controller_reset_out_reset:inv -> [camera_controller_0:nReset, jtag_uart:rst_n, nios2:reset_n, sdram:reset_n]
+	signal rst_controller_reset_out_reset_ports_inv                                : std_logic;                     -- rst_controller_reset_out_reset:inv -> [camera_controller_0:nReset, jtag_uart:rst_n, lcd_sys_0:reset_n, nios2:reset_n, sdram:reset_n]
 
 begin
 
@@ -556,6 +610,30 @@ begin
 			av_irq         => irq_mapper_receiver0_irq                                       --               irq.irq
 		);
 
+	lcd_sys_0 : component LCD
+		port map (
+			clk                 => clocks_sys_clk_clk,                                     --            clock.clk
+			reset_n             => rst_controller_reset_out_reset_ports_inv,               --            reset.reset_n
+			as_add              => mm_interconnect_0_lcd_sys_0_avalon_slave_0_address,     --   avalon_slave_0.address
+			as_wait_request     => mm_interconnect_0_lcd_sys_0_avalon_slave_0_waitrequest, --                 .waitrequest
+			as_wrdata           => mm_interconnect_0_lcd_sys_0_avalon_slave_0_writedata,   --                 .writedata
+			as_write            => mm_interconnect_0_lcd_sys_0_avalon_slave_0_write,       --                 .write
+			bus_read_data_valid => lcd_sys_0_bus_readdatavalid,                            --              bus.readdatavalid
+			bus_waitReq         => lcd_sys_0_bus_waitrequest,                              --                 .waitrequest
+			bus_read_data       => lcd_sys_0_bus_readdata,                                 --                 .readdata
+			bus_read            => lcd_sys_0_bus_read,                                     --                 .read
+			bus_add             => lcd_sys_0_bus_address,                                  --                 .address
+			bus_BE              => lcd_sys_0_bus_byteenable,                               --                 .byteenable
+			bus_burstCount      => lcd_sys_0_bus_burstcount,                               --                 .burstcount
+			lcd_data            => lcd_conduit_lcd_data,                                   --      lcd_conduit.lcd_data
+			lcd_dc              => lcd_conduit_lcd_dc,                                     --                 .lcd_dc
+			lcd_rd              => lcd_conduit_lcd_rd,                                     --                 .lcd_rd
+			lcd_wr              => lcd_conduit_lcd_wr,                                     --                 .lcd_wr
+			lcd_reset_n         => lcd_conduit_lcd_reset_n,                                --                 .lcd_reset_n
+			ext_IRQ             => lcd_controller_ext_irq,                                 -- camera_interface.ext_irq
+			am_readOK           => lcd_controller_am_readok                                --                 .am_readok
+		);
+
 	nios2 : component system_nios2
 		port map (
 			clk                                   => clocks_sys_clk_clk,                                    --                       clk.clk
@@ -624,6 +702,13 @@ begin
 			camera_controller_0_avalon_master_readdatavalid       => camera_controller_0_avalon_master_readdatavalid,                         --                                                .readdatavalid
 			camera_controller_0_avalon_master_write               => camera_controller_0_avalon_master_write,                                 --                                                .write
 			camera_controller_0_avalon_master_writedata           => camera_controller_0_avalon_master_writedata,                             --                                                .writedata
+			lcd_sys_0_bus_address                                 => lcd_sys_0_bus_address,                                                   --                                   lcd_sys_0_bus.address
+			lcd_sys_0_bus_waitrequest                             => lcd_sys_0_bus_waitrequest,                                               --                                                .waitrequest
+			lcd_sys_0_bus_burstcount                              => lcd_sys_0_bus_burstcount,                                                --                                                .burstcount
+			lcd_sys_0_bus_byteenable                              => lcd_sys_0_bus_byteenable,                                                --                                                .byteenable
+			lcd_sys_0_bus_read                                    => lcd_sys_0_bus_read,                                                      --                                                .read
+			lcd_sys_0_bus_readdata                                => lcd_sys_0_bus_readdata,                                                  --                                                .readdata
+			lcd_sys_0_bus_readdatavalid                           => lcd_sys_0_bus_readdatavalid,                                             --                                                .readdatavalid
 			nios2_data_master_address                             => nios2_data_master_address,                                               --                               nios2_data_master.address
 			nios2_data_master_waitrequest                         => nios2_data_master_waitrequest,                                           --                                                .waitrequest
 			nios2_data_master_byteenable                          => nios2_data_master_byteenable,                                            --                                                .byteenable
@@ -661,6 +746,10 @@ begin
 			jtag_uart_avalon_jtag_slave_writedata                 => mm_interconnect_0_jtag_uart_avalon_jtag_slave_writedata,                 --                                                .writedata
 			jtag_uart_avalon_jtag_slave_waitrequest               => mm_interconnect_0_jtag_uart_avalon_jtag_slave_waitrequest,               --                                                .waitrequest
 			jtag_uart_avalon_jtag_slave_chipselect                => mm_interconnect_0_jtag_uart_avalon_jtag_slave_chipselect,                --                                                .chipselect
+			lcd_sys_0_avalon_slave_0_address                      => mm_interconnect_0_lcd_sys_0_avalon_slave_0_address,                      --                        lcd_sys_0_avalon_slave_0.address
+			lcd_sys_0_avalon_slave_0_write                        => mm_interconnect_0_lcd_sys_0_avalon_slave_0_write,                        --                                                .write
+			lcd_sys_0_avalon_slave_0_writedata                    => mm_interconnect_0_lcd_sys_0_avalon_slave_0_writedata,                    --                                                .writedata
+			lcd_sys_0_avalon_slave_0_waitrequest                  => mm_interconnect_0_lcd_sys_0_avalon_slave_0_waitrequest,                  --                                                .waitrequest
 			nios2_jtag_debug_module_address                       => mm_interconnect_0_nios2_jtag_debug_module_address,                       --                         nios2_jtag_debug_module.address
 			nios2_jtag_debug_module_write                         => mm_interconnect_0_nios2_jtag_debug_module_write,                         --                                                .write
 			nios2_jtag_debug_module_read                          => mm_interconnect_0_nios2_jtag_debug_module_read,                          --                                                .read

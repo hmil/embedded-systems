@@ -2,7 +2,7 @@
 #include <io.h>
 #include <stdio.h>
 
-#include "i2c.h"
+#include "i2c/i2c.h"
 
 #ifndef CAMERA_CONTROLLER_H
 #define CAMERA_CONTROLLER_H

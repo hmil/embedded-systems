@@ -16,3 +16,5 @@ Info (10281): Verilog HDL Declaration information at system_mm_interconnect_0_ro
 Info (10281): Verilog HDL Declaration information at system_mm_interconnect_0_router_006.sv(49): object "DEFAULT_RD_CHANNEL" differs only in case from object "default_rd_channel" in the same scope
 Info (10281): Verilog HDL Declaration information at system_mm_interconnect_0_router_007.sv(48): object "DEFAULT_WR_CHANNEL" differs only in case from object "default_wr_channel" in the same scope
 Info (10281): Verilog HDL Declaration information at system_mm_interconnect_0_router_007.sv(49): object "DEFAULT_RD_CHANNEL" differs only in case from object "default_rd_channel" in the same scope
+Info (10281): Verilog HDL Declaration information at system_mm_interconnect_0_router_008.sv(48): object "DEFAULT_WR_CHANNEL" differs only in case from object "default_wr_channel" in the same scope
+Info (10281): Verilog HDL Declaration information at system_mm_interconnect_0_router_008.sv(49): object "DEFAULT_RD_CHANNEL" differs only in case from object "default_rd_channel" in the same scope

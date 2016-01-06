@@ -48,6 +48,41 @@ i_state.011 0 0 1 0 0 1
 i_state.101 0 1 0 0 0 1 
 i_state.111 1 0 0 0 0 1 
 
+State Machine - |CameraProject|system:u0|LCD:lcd_sys_0|controller:b2v_inst5|state
+Name state.PIPE state.DEPILE_6 state.DEPILE_5 state.DEPILE_4 state.DEPILE_3 state.DEPILE_2 state.DEPILE state.RESET_PAGE_3 state.RESET_PAGE_2 state.RESET_PAGE_1 state.RESET_COL_3 state.RESET_COL_2 state.RESET_COL_1 state.WAIT_STATE state.INIT 
+state.INIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.WAIT_STATE 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.RESET_COL_1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.RESET_COL_2 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.RESET_COL_3 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.RESET_PAGE_1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.RESET_PAGE_2 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.RESET_PAGE_3 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.DEPILE 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.DEPILE_2 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.DEPILE_3 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.DEPILE_4 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.DEPILE_5 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.DEPILE_6 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.PIPE 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |CameraProject|system:u0|LCD:lcd_sys_0|slave:b2v_inst12|state
+Name state.LCD_CONTROL state.WRITE_STATE state.WAIT_STATE 
+state.WAIT_STATE 0 0 0 
+state.WRITE_STATE 0 1 1 
+state.LCD_CONTROL 1 0 1 
+
+State Machine - |CameraProject|system:u0|LCD:lcd_sys_0|master:b2v_inst|state
+Name state.ACK state.OFFSET_STATE state.RCV_DATA state.BUS_REQ state.WAIT_SPACE state.READ_INIT state.WAIT_STATE state.INIT 
+state.INIT 0 0 0 0 0 0 0 0 
+state.WAIT_STATE 0 0 0 0 0 0 1 1 
+state.READ_INIT 0 0 0 0 0 1 0 1 
+state.WAIT_SPACE 0 0 0 0 1 0 0 1 
+state.BUS_REQ 0 0 0 1 0 0 0 1 
+state.RCV_DATA 0 0 1 0 0 0 0 1 
+state.OFFSET_STATE 0 1 0 0 0 0 0 1 
+state.ACK 1 0 0 0 0 0 0 1 
+
 State Machine - |CameraProject|system:u0|i2c_interface:i2c_0|i2c_core:core|p_state
 Name p_state.s_WrAck_D p_state.s_WrAck_C p_state.s_WrAck_B p_state.s_WrAck_A p_state.s_Wr_E p_state.s_Wr_D p_state.s_Wr_C p_state.s_Wr_B p_state.s_Wr_A p_state.s_RdAck_E p_state.s_RdAck_D p_state.s_RdAck_C p_state.s_RdAck_B p_state.s_RdAck_A p_state.s_Rd_F p_state.s_Rd_E p_state.s_Rd_D p_state.s_Rd_C p_state.s_Rd_B p_state.s_Rd_A p_state.s_Stop_C p_state.s_Stop_B p_state.s_Stop_A p_state.s_Start_D p_state.s_Start_C p_state.s_Start_B p_state.s_Start_A p_state.s_DoneAck p_state.s_Done p_state.s_Idle p_state.s_Reset 
 p_state.s_Reset 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 

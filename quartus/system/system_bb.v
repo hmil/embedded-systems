@@ -2,6 +2,11 @@
 module system (
 	camera_controller_current_frame,
 	camera_controller_read_done,
+	camera_input_clk,
+	camera_input_frame_valid,
+	camera_input_line_valid,
+	camera_input_data,
+	camera_input_cam_reset_n,
 	clk_clk,
 	frame_rdy_irq,
 	i2c_scl,
@@ -19,14 +24,21 @@ module system (
 	sensor_output_generator_frame_valid,
 	sensor_output_generator_line_valid,
 	sensor_output_generator_data,
-	camera_input_clk,
-	camera_input_frame_valid,
-	camera_input_line_valid,
-	camera_input_data,
-	camera_input_cam_reset_n);	
+	lcd_conduit_lcd_data,
+	lcd_conduit_lcd_dc,
+	lcd_conduit_lcd_rd,
+	lcd_conduit_lcd_wr,
+	lcd_conduit_lcd_reset_n,
+	lcd_controller_ext_irq,
+	lcd_controller_am_readok);	
 
 	output	[31:0]	camera_controller_current_frame;
 	input		camera_controller_read_done;
+	input		camera_input_clk;
+	input		camera_input_frame_valid;
+	input		camera_input_line_valid;
+	input	[11:0]	camera_input_data;
+	output		camera_input_cam_reset_n;
 	input		clk_clk;
 	output		frame_rdy_irq;
 	inout		i2c_scl;
@@ -44,9 +56,11 @@ module system (
 	output		sensor_output_generator_frame_valid;
 	output		sensor_output_generator_line_valid;
 	output	[11:0]	sensor_output_generator_data;
-	input		camera_input_clk;
-	input		camera_input_frame_valid;
-	input		camera_input_line_valid;
-	input	[11:0]	camera_input_data;
-	output		camera_input_cam_reset_n;
+	output	[15:0]	lcd_conduit_lcd_data;
+	output		lcd_conduit_lcd_dc;
+	output		lcd_conduit_lcd_rd;
+	output		lcd_conduit_lcd_wr;
+	output		lcd_conduit_lcd_reset_n;
+	input		lcd_controller_ext_irq;
+	output		lcd_controller_am_readok;
 endmodule

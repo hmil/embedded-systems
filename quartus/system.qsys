@@ -21,7 +21,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "1";
          type = "int";
       }
    }
@@ -29,7 +29,7 @@
    {
       datum baseAddress
       {
-         value = "33554464";
+         value = "33554496";
          type = "String";
       }
    }
@@ -37,7 +37,7 @@
    {
       datum _sortIndex
       {
-         value = "0";
+         value = "4";
          type = "int";
       }
    }
@@ -45,7 +45,7 @@
    {
       datum _sortIndex
       {
-         value = "4";
+         value = "8";
          type = "int";
       }
    }
@@ -53,7 +53,7 @@
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "2";
          type = "int";
       }
    }
@@ -69,7 +69,7 @@
    {
       datum _sortIndex
       {
-         value = "7";
+         value = "3";
          type = "int";
       }
    }
@@ -77,7 +77,7 @@
    {
       datum baseAddress
       {
-         value = "33554512";
+         value = "33554544";
          type = "String";
       }
    }
@@ -85,7 +85,7 @@
    {
       datum _sortIndex
       {
-         value = "3";
+         value = "7";
          type = "int";
       }
    }
@@ -93,7 +93,23 @@
    {
       datum baseAddress
       {
-         value = "33554504";
+         value = "33554536";
+         type = "String";
+      }
+   }
+   element lcd_sys_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element lcd_sys_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "33554464";
          type = "String";
       }
    }
@@ -101,7 +117,7 @@
    {
       datum _sortIndex
       {
-         value = "1";
+         value = "5";
          type = "int";
       }
    }
@@ -117,7 +133,7 @@
    {
       datum _sortIndex
       {
-         value = "2";
+         value = "6";
          type = "int";
       }
    }
@@ -126,6 +142,14 @@
       datum baseAddress
       {
          value = "0";
+         type = "String";
+      }
+   }
+   element system
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone IV E";
          type = "String";
       }
    }
@@ -231,6 +255,16 @@
    type="interrupt"
    dir="end" />
  <interface name="i2c" internal="i2c_0.i2c" type="conduit" dir="end" />
+ <interface
+   name="lcd_conduit"
+   internal="lcd_sys_0.lcd_conduit"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="lcd_controller"
+   internal="lcd_sys_0.camera_interface"
+   type="conduit"
+   dir="end" />
  <interface name="sdram_clk" internal="clocks.sdram_clk" type="clock" dir="start" />
  <interface name="sdram_wire" internal="sdram.wire" type="conduit" dir="end" />
  <interface
@@ -291,6 +325,7 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
+ <module name="lcd_sys_0" kind="lcd_sys" version="1.0" enabled="1" />
  <module name="nios2" kind="altera_nios2_qsys" version="15.0" enabled="1">
   <parameter name="bht_ramBlockType" value="Automatic" />
   <parameter name="breakOffset" value="32" />
@@ -301,7 +336,7 @@
   <parameter name="cpuReset" value="false" />
   <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
   <parameter name="dataAddrWidth" value="26" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x2000000' /><slave name='cmos_sensor_output_generator_0.avalon_slave' start='0x2000000' end='0x2000020' /><slave name='camera_controller_0.as' start='0x2000020' end='0x2000040' /><slave name='jtag_uart.avalon_jtag_slave' start='0x2000048' end='0x2000050' /><slave name='i2c_0.avalon_slave' start='0x2000050' end='0x2000054' /><slave name='nios2.jtag_debug_module' start='0x2001000' end='0x2001800' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x2000000' /><slave name='cmos_sensor_output_generator_0.avalon_slave' start='0x2000000' end='0x2000020' /><slave name='lcd_sys_0.avalon_slave_0' start='0x2000020' end='0x2000040' /><slave name='camera_controller_0.as' start='0x2000040' end='0x2000060' /><slave name='jtag_uart.avalon_jtag_slave' start='0x2000068' end='0x2000070' /><slave name='i2c_0.avalon_slave' start='0x2000070' end='0x2000074' /><slave name='nios2.jtag_debug_module' start='0x2001000' end='0x2001800' /></address-map>]]></parameter>
   <parameter name="dcache_bursts" value="false" />
   <parameter name="dcache_lineSize" value="32" />
   <parameter name="dcache_numTCDM" value="0" />
@@ -328,7 +363,7 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Small" />
   <parameter name="instAddrWidth" value="26" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x2000000' /><slave name='jtag_uart.avalon_jtag_slave' start='0x2000048' end='0x2000050' /><slave name='nios2.jtag_debug_module' start='0x2001000' end='0x2001800' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x2000000' /><slave name='jtag_uart.avalon_jtag_slave' start='0x2000068' end='0x2000070' /><slave name='nios2.jtag_debug_module' start='0x2001000' end='0x2001800' /></address-map>]]></parameter>
   <parameter name="internalIrqMaskSystemInfo" value="1" />
   <parameter name="manuallyAssignCpuID" value="true" />
   <parameter name="mmu_TLBMissExcOffset" value="0" />
@@ -465,13 +500,18 @@
   <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection kind="avalon" version="15.0" start="lcd_sys_0.bus" end="sdram.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection
    kind="avalon"
    version="15.0"
    start="nios2.data_master"
    end="camera_controller_0.as">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x02000020" />
+  <parameter name="baseAddress" value="0x02000040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -480,7 +520,7 @@
    start="nios2.data_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x02000048" />
+  <parameter name="baseAddress" value="0x02000068" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -498,7 +538,16 @@
    start="nios2.data_master"
    end="i2c_0.avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x02000050" />
+  <parameter name="baseAddress" value="0x02000070" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="15.0"
+   start="nios2.data_master"
+   end="lcd_sys_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x02000020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -521,7 +570,7 @@
    start="nios2.instruction_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x02000048" />
+  <parameter name="baseAddress" value="0x02000068" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -562,6 +611,11 @@
    end="cmos_sensor_output_generator_0.clock" />
  <connection kind="clock" version="15.0" start="clocks.sys_clk" end="i2c_0.clock" />
  <connection
+   kind="clock"
+   version="15.0"
+   start="clocks.sys_clk"
+   end="lcd_sys_0.clock" />
+ <connection
    kind="interrupt"
    version="15.0"
    start="nios2.d_irq"
@@ -590,6 +644,11 @@
    start="clk.clk_reset"
    end="cmos_sensor_output_generator_0.reset" />
  <connection kind="reset" version="15.0" start="clk.clk_reset" end="i2c_0.reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="clk.clk_reset"
+   end="lcd_sys_0.reset" />
  <connection kind="reset" version="15.0" start="clk.clk_reset" end="nios2.reset_n" />
  <connection
    kind="reset"
@@ -621,6 +680,11 @@
    version="15.0"
    start="nios2.jtag_debug_module_reset"
    end="sdram.reset" />
+ <connection
+   kind="reset"
+   version="15.0"
+   start="nios2.jtag_debug_module_reset"
+   end="lcd_sys_0.reset" />
  <connection
    kind="reset"
    version="15.0"

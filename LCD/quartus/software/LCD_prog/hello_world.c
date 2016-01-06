@@ -43,7 +43,7 @@ void LCD_Frouze(void);
 void load(FILE* f, uint16_t iframe[H][W]);
 
 int main()
-{ 
+{
   printf("Hello from Nios II!\n");
   LCD_Init();
   int i = 0;

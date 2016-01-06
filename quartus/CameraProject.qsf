@@ -634,6 +634,11 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VHDL_FILE ../LCD/quartus/fifo.vhd
+set_global_assignment -name VHDL_FILE ../LCD/quartus/LCD.vhd
+set_global_assignment -name VHDL_FILE ../LCD/quartus/master.vhd
+set_global_assignment -name VHDL_FILE ../LCD/quartus/slave.vhd
+set_global_assignment -name VHDL_FILE ../LCD/quartus/controller.vhd
 set_global_assignment -name VHDL_FILE ../CameraController/cctrl_controller.vhd
 set_global_assignment -name VHDL_FILE ../CameraController/cctrl_core.vhd
 set_global_assignment -name VHDL_FILE ../CameraController/cctrl_master.vhd

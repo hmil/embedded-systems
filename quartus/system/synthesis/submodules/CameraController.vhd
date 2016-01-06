@@ -42,6 +42,7 @@ ARCHITECTURE comp OF CameraController IS
 	signal sReadFrame: STD_LOGIC_VECTOR (31 DOWNTO 0);
 	signal sWriteFrame: STD_LOGIC_VECTOR (31 DOWNTO 0);
 	signal sBufferAddr: STD_LOGIC_VECTOR (31 DOWNTO 0);
+	signal sFrameLength: STD_LOGIC_VECTOR(31 DOWNTO 0);
 	signal sIncrementFrame: STD_LOGIC;
 	signal sStart: STD_LOGIC;
 	signal sStop: STD_LOGIC;
@@ -49,7 +50,8 @@ ARCHITECTURE comp OF CameraController IS
 	signal sDone: STD_LOGIC;
 
 	signal sReset_n: STD_LOGIC;
-	signal sResetCapture_n: STD_LOGIC;
+	signal sResetMaster_n: STD_LOGIC;
+	signal sResetCore_n: STD_LOGIC;
 	signal sSoftReset: STD_LOGIC;
 
 	signal sSoftReadDone: STD_LOGIC;
@@ -82,6 +84,7 @@ ARCHITECTURE comp OF CameraController IS
 			--  Camera controller interconnect
 			CurrentFrame: IN std_logic_vector (31 DOWNTO 0);
 			BufferAddr: OUT std_logic_vector (31 DOWNTO 0);
+			FrameLength: OUT std_logic_vector(31 DOWNTO 0);
 			Start: OUT STD_LOGIC;
 			Stop: OUT STD_LOGIC;
 			SoftReadDone: OUT STD_LOGIC;
@@ -143,6 +146,7 @@ ARCHITECTURE comp OF CameraController IS
 	    nReset: in std_logic;
 
 	    BufferAddr: in std_logic_vector(31 downto 0);
+			FrameLength: in std_logic_vector(31 downto 0);
 	    WriteAddr: out std_logic_vector(31 downto 0);
 	    ReadAddr: out std_logic_vector(31 downto 0);
 
@@ -153,7 +157,8 @@ ARCHITECTURE comp OF CameraController IS
 	    ReaderComplete: in std_logic; -- asserted when reader finished reading frame
 	    HasFrame: out std_logic;      -- asserted any time when a frame is available
 
-	    clear_capture_n: out std_logic; -- clear capture devices (buffers and state machines)
+	    reset_core_n: out std_logic;
+			reset_master_n: out std_logic;
 	    start_capture: out std_logic  -- start capture devices
 	  );
 	end component;
@@ -171,6 +176,7 @@ BEGIN
     nReset => sReset_n,
 
     BufferAddr => sBufferAddr,
+		FrameLength => sFrameLength,
     WriteAddr => sWriteFrame,
     ReadAddr => sReadFrame,
 
@@ -181,13 +187,14 @@ BEGIN
     ReaderComplete => sReadDone, -- asserted when reader finished reading frame
     HasFrame => sFrameRDY,
 
-    clear_capture_n => sResetCapture_n, -- clear capture devices (buffers and state machines)
+    reset_core_n => sResetCore_n,
+		reset_master_n => sResetMaster_n,
     start_capture => sStartCapture  -- start capture devices
   );
 
 	core: cctrl_core PORT MAP (
 		Clk => Clk,
-		nReset => sResetCapture_n,
+		nReset => sResetCore_n,
 		CamClk => CamClk,
 		FrameValid => CamFV,
 		LineValid => CamLV,
@@ -217,6 +224,7 @@ BEGIN
 		--  Camera controller interconnect
 		CurrentFrame => sReadFrame,
 		BufferAddr => sBufferAddr,
+		FrameLength => sFrameLength,
 		Start => sStart,
 		Stop => sStop,
 		SoftReadDone => sSoftReadDone,
@@ -225,7 +233,7 @@ BEGIN
 
 	master: cctrl_master PORT MAP (
 		Clk => Clk,
-		nReset => sResetCapture_n,
+		nReset => sResetMaster_n,
 		-- Avalon Master
 		Address => AM_Address,
 		BurstCount => AM_BurstCount,

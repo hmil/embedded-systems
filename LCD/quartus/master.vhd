@@ -1,12 +1,12 @@
 library ieee;
-use ieee.std_logic_1164.all; 
+use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 library work;
 -- max = 76800 pixels = X"12C00"
 -- burstCount = 240 = X"F0"
-entity master is 
+entity master is
 	port
 	(
 		-- global
@@ -27,7 +27,7 @@ entity master is
 		bus_read : out std_logic;
 		bus_BE   : out std_logic_vector(1 downto 0);
 		bus_burstCount : out std_logic_vector(7 downto 0);
-		
+
 		-- From bus
 		bus_waitReq : in std_logic;
 		bus_read_data_valid : in std_logic;
@@ -47,24 +47,24 @@ signal offset, next_offset : std_logic_vector(24 downto 0);
 signal next_burst_counter, burst_counter : std_logic_vector(16 downto 0);
 
 begin
-	
+
 	bus_BE <= "11";
 
 	process(am_clk, am_reset_n)
-	begin 
-		if am_reset_n = '0' then 
+	begin
+		if am_reset_n = '0' then
 			state <= INIT;
-		elsif rising_edge(am_clk) then 
+		elsif rising_edge(am_clk) then
 			state <= next_state;
 			current_buffer <= next_buffer;
 			offset <= next_offset;
-			burst_counter <= next_burst_counter;		
+			burst_counter <= next_burst_counter;
 		end if;
 	end process;
-	
+
 	process(state, current_buffer, offset, burst_counter, add_buf_0, add_buf_1, add_buf_2, bus_read_data, bus_waitReq, bus_read_data_valid, as_initOk,ext_IRQ, fifo_almostFull)
 	begin
-	
+
 		next_state <= state;
 		next_buffer <= current_buffer;
 		next_offset <= offset;
@@ -75,34 +75,34 @@ begin
 		fifo_wrreq <= '0';
 		bus_add <= (others => '0');
 		am_readOK <= '0';
-		case state is 
+		case state is
 		when INIT =>
 			next_buffer <= "10";
 			if as_initOk = '1' then
 				next_state <= WAIT_STATE;
 			end if;
-			
+
 		when WAIT_STATE =>
 			am_readOk <= '0';
-			if ext_IRQ = '1' then 
-				next_state <= READ_INIT;					
-				if current_buffer = "10" then 
+			if ext_IRQ = '1' then
+				next_state <= READ_INIT;
+				if current_buffer = "10" then
 					next_buffer <= "00";
-				else 
+				else
 					next_buffer <= current_buffer + 1;
 				end if;
 			end if;
-			
+
 		when READ_INIT =>
 			next_offset <= (others => '0');
 			next_burst_counter <= (others => '0');
 			next_state <= WAIT_SPACE;
-			
-		when WAIT_SPACE => 
-			if fifo_almostFull = '0' then 
+
+		when WAIT_SPACE =>
+			if fifo_almostFull = '0' then
 				next_state <= BUS_REQ;
 			end if;
-			
+
 		when BUS_REQ =>
 			bus_read <= '1';
 			bus_burstCount <= X"F0";
@@ -113,10 +113,11 @@ begin
 				when others =>
 			end case;
 
-			if bus_waitReq = '0' then 
+			if bus_waitReq = '0' then
 				next_state <= RCV_DATA;
 			end if;
-		
+
+
 		when RCV_DATA =>
 			if bus_read_data_valid = '1' then
 				fifo_wrData <= bus_read_data;
@@ -126,8 +127,8 @@ begin
 			if burst_counter = X"F0" then
 				next_state <= OFFSET_STATE;
 			end if;
-		
-		when OFFSET_STATE => 
+
+		when OFFSET_STATE =>
 			next_offset <= offset + X"01E0";
 			if offset + X"0001E0" >= X"25800" then
 				next_state <= ACK;
@@ -135,15 +136,15 @@ begin
 				next_state <= WAIT_SPACE;
 			end if;
 			next_burst_counter <= (others => '0');
-		
+
 		when ACK =>
 			am_readOk <= '1';
-			if ext_IRQ = '0' then --'0' <= correct 
+			-- if ext_IRQ = '0' then --'0' <= correct
 				next_state <= WAIT_STATE;
-			end if;
-			
-		when others => 
+			-- end if;
+
+		when others =>
 		end case;
 	end process;
-	
+
 end implementation;

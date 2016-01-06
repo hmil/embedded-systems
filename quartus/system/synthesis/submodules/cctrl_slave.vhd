@@ -22,7 +22,8 @@ PORT(
 	Start: OUT STD_LOGIC;
 	Stop: OUT STD_LOGIC;
 	SoftReadDone: OUT STD_LOGIC;
-	ReadAvail: IN STD_LOGIC
+	ReadAvail: IN STD_LOGIC;
+	FrameLength: OUT std_logic_vector(31 downto 0)
 );
 End cctrl_slave;
 
@@ -41,6 +42,7 @@ Stop <= rCtl(5);
 SoftReset <= rCtl(6);
 SoftReadDone <= rCtl(7);
 BufferAddr <= rBuffStart;
+FrameLength <= rBuffLen;
 
 -- Registers write
 pRegWr:process(Clk, nReset)
@@ -53,9 +55,7 @@ begin
 		-- Trigger bits are forced to 0 on next rising edge
 		rCtl(7 downto 4) <= "0000";
 		-- Status bits
-		if ReadAvail = '1' then
-			rCtl(7) <= '1';
-		end if;
+		rCtl(8) <= ReadAvail;
 
 		-- External command to set registers has priority
 		if ChipSelect = '1' and Write = '1' then
@@ -69,6 +69,8 @@ begin
 			end case;
 		end if;
 	end if;
+	rCtl(3 downto 0) <= "0000";
+	rCtl(15 downto 9) <= "0000000";
 end process pRegWr;
 
 -- Registers read

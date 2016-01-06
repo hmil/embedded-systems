@@ -71,10 +71,10 @@ ENTITY CameraProject IS
 			GPIO_0_3: IN STD_LOGIC;
 			GPIO_0_2: IN STD_LOGIC;
 			GPIO_0_1: IN STD_LOGIC;
-			GPIO_0_0: IN STD_LOGIC
+			GPIO_0_0: IN STD_LOGIC;
 			--
 			-- -- GPIO_1
-			-- GPIO_1				: inout std_logic_vector(33 downto 0);
+			GPIO_1				: inout std_logic_vector(33 downto 0)
 			-- GPIO_1_IN		 : in		std_logic_vector(1 downto 0)
 	);
 END CameraProject ;
@@ -96,6 +96,7 @@ ARCHITECTURE a OF CameraProject	IS
 			sdram_clk_clk			: out	 	std_logic;																				-- clk
 			camera_controller_current_frame : out	 std_logic_vector(31 downto 0);			-- current_frame
 			camera_controller_read_done			: in		std_logic	 := 'X' ;									-- read_done
+			frame_rdy_irq                       : out   std_logic;                                        -- irq
 			camera_input_clk								: in		std_logic										 := 'X';						 -- clk
 			camera_input_frame_valid				: in		std_logic										 := 'X';						 -- frame_valid
 			camera_input_line_valid					: in		std_logic										 := 'X';						 -- line_valid
@@ -105,7 +106,14 @@ ARCHITECTURE a OF CameraProject	IS
 			sensor_output_generator_line_valid  : out   std_logic;                                        -- line_valid
 			sensor_output_generator_data        : out   std_logic_vector(11 downto 0);                     -- data
 			i2c_scl                             : inout std_logic                     := 'X';             -- scl
-			i2c_sda                             : inout std_logic                     := 'X'              -- sda
+			i2c_sda                             : inout std_logic                     := 'X';              -- sda
+			lcd_conduit_lcd_data                : out   std_logic_vector(15 downto 0);                    -- lcd_data
+			lcd_conduit_lcd_dc                  : out   std_logic;                                        -- lcd_dc
+			lcd_conduit_lcd_rd                  : out   std_logic;                                        -- lcd_rd
+			lcd_conduit_lcd_wr                  : out   std_logic;                                        -- lcd_wr
+			lcd_conduit_lcd_reset_n             : out   std_logic;                                        -- lcd_reset_n
+			lcd_controller_ext_irq              : in    std_logic                     := 'X';             -- ext_irq
+			lcd_controller_am_readok            : out   std_logic                                         -- am_readok
 		);
 	end component system;
 
@@ -113,6 +121,12 @@ ARCHITECTURE a OF CameraProject	IS
 	signal line_valid: std_logic;
 	signal cam_data: std_logic_vector(11 downto 0);
 	signal sReset_n: std_logic;
+
+	signal sReadDone: std_logic;
+	signal sFrameReady: std_logic;
+
+	signal lcd_data : std_logic_vector(15 downto 0);
+	signal lcd_dc, lcd_rd, lcd_wr, lcd_reset_n, signaltap_clk : std_logic;
 
 BEGIN
 
@@ -124,6 +138,25 @@ BEGIN
 	cam_data <= GPIO_0_0 & GPIO_0_1 & GPIO_0_2  & GPIO_0_3 &
 							GPIO_0_4 & GPIO_0_5 & GPIO_0_6  & GPIO_0_7 &
 							GPIO_0_8 & GPIO_0_9 & GPIO_0_10 & GPIO_0_11;
+
+
+  -- LCD stuff
+
+	GPIO_1(33) <= '1';
+	GPIO_1(23) <= '0';
+
+	GPIO_1(10) <= lcd_dc;
+	GPIO_1(9) <= lcd_wr;
+	GPIO_1(8) <= lcd_rd;
+	GPIO_1(31) <= lcd_reset_n;
+
+	GPIO_1(22 downto 11) <= lcd_data(15 downto 4);
+	GPIO_1(3) <= lcd_data(3);
+	GPIO_1(4) <= lcd_data(2);
+	GPIO_1(5) <= lcd_data(1);
+	GPIO_1(6) <= lcd_data(0);
+
+
 
 	u0			 : system PORT MAP (
 		clk_clk => CLOCK_50,
@@ -142,7 +175,8 @@ BEGIN
 		i2c_scl => GPIO_0_22,
 		i2c_sda => GPIO_0_21,
 
-		camera_controller_read_done => '0',
+		camera_controller_read_done => sReadDone,
+		frame_rdy_irq               => sFrameReady,
 
 		-- Use simulator:
 
@@ -157,7 +191,18 @@ BEGIN
 
 		camera_input_clk => CLOCK_50, -- GPIO_0_IN0,
 		camera_input_line_valid => GPIO_0_19,
-		camera_input_frame_valid => GPIO_0_20
+		camera_input_frame_valid => GPIO_0_20,
+
+
+		-- lcd
+
+		lcd_conduit_lcd_data                => lcd_data,                --             lcd_conduit.lcd_data
+		lcd_conduit_lcd_dc                  => lcd_dc,                  --                        .lcd_dc
+		lcd_conduit_lcd_rd                  => lcd_rd,                  --                        .lcd_rd
+		lcd_conduit_lcd_wr                  => lcd_wr,                  --                        .lcd_wr
+		lcd_conduit_lcd_reset_n             => lcd_reset_n,             --                        .lcd_reset_n
+		lcd_controller_ext_irq              => sFrameReady,
+		lcd_controller_am_readok            => sReadDone
 
 	);
 

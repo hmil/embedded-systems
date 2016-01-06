@@ -15,6 +15,13 @@ module system (
 		output wire        frame_rdy_irq,                       //               frame_rdy.irq
 		inout  wire        i2c_scl,                             //                     i2c.scl
 		inout  wire        i2c_sda,                             //                        .sda
+		output wire [15:0] lcd_conduit_lcd_data,                //             lcd_conduit.lcd_data
+		output wire        lcd_conduit_lcd_dc,                  //                        .lcd_dc
+		output wire        lcd_conduit_lcd_rd,                  //                        .lcd_rd
+		output wire        lcd_conduit_lcd_wr,                  //                        .lcd_wr
+		output wire        lcd_conduit_lcd_reset_n,             //                        .lcd_reset_n
+		input  wire        lcd_controller_ext_irq,              //          lcd_controller.ext_irq
+		output wire        lcd_controller_am_readok,            //                        .am_readok
 		output wire        sdram_clk_clk,                       //               sdram_clk.clk
 		output wire [12:0] sdram_wire_addr,                     //              sdram_wire.addr
 		output wire [1:0]  sdram_wire_ba,                       //                        .ba
@@ -30,7 +37,7 @@ module system (
 		output wire [11:0] sensor_output_generator_data         //                        .data
 	);
 
-	wire         clocks_sys_clk_clk;                                                      // clocks:sys_clk_clk -> [camera_controller_0:Clk, cmos_sensor_output_generator_0:clk, i2c_0:clk, irq_mapper:clk, jtag_uart:clk, mm_interconnect_0:clocks_sys_clk_clk, nios2:clk, rst_controller:clk, sdram:clk]
+	wire         clocks_sys_clk_clk;                                                      // clocks:sys_clk_clk -> [camera_controller_0:Clk, cmos_sensor_output_generator_0:clk, i2c_0:clk, irq_mapper:clk, jtag_uart:clk, lcd_sys_0:clk, mm_interconnect_0:clocks_sys_clk_clk, nios2:clk, rst_controller:clk, sdram:clk]
 	wire         nios2_jtag_debug_module_reset_reset;                                     // nios2:jtag_debug_module_resetrequest -> [rst_controller:reset_in0, rst_controller:reset_in1, rst_controller_001:reset_in0]
 	wire  [15:0] camera_controller_0_avalon_master_readdata;                              // mm_interconnect_0:camera_controller_0_avalon_master_readdata -> camera_controller_0:AM_DataRead
 	wire         camera_controller_0_avalon_master_waitrequest;                           // mm_interconnect_0:camera_controller_0_avalon_master_waitrequest -> camera_controller_0:AM_WaitRequest
@@ -49,6 +56,13 @@ module system (
 	wire         nios2_data_master_read;                                                  // nios2:d_read -> mm_interconnect_0:nios2_data_master_read
 	wire         nios2_data_master_write;                                                 // nios2:d_write -> mm_interconnect_0:nios2_data_master_write
 	wire  [31:0] nios2_data_master_writedata;                                             // nios2:d_writedata -> mm_interconnect_0:nios2_data_master_writedata
+	wire         lcd_sys_0_bus_waitrequest;                                               // mm_interconnect_0:lcd_sys_0_bus_waitrequest -> lcd_sys_0:bus_waitReq
+	wire  [15:0] lcd_sys_0_bus_readdata;                                                  // mm_interconnect_0:lcd_sys_0_bus_readdata -> lcd_sys_0:bus_read_data
+	wire         lcd_sys_0_bus_read;                                                      // lcd_sys_0:bus_read -> mm_interconnect_0:lcd_sys_0_bus_read
+	wire  [31:0] lcd_sys_0_bus_address;                                                   // lcd_sys_0:bus_add -> mm_interconnect_0:lcd_sys_0_bus_address
+	wire   [1:0] lcd_sys_0_bus_byteenable;                                                // lcd_sys_0:bus_BE -> mm_interconnect_0:lcd_sys_0_bus_byteenable
+	wire         lcd_sys_0_bus_readdatavalid;                                             // mm_interconnect_0:lcd_sys_0_bus_readdatavalid -> lcd_sys_0:bus_read_data_valid
+	wire   [7:0] lcd_sys_0_bus_burstcount;                                                // lcd_sys_0:bus_burstCount -> mm_interconnect_0:lcd_sys_0_bus_burstcount
 	wire  [31:0] nios2_instruction_master_readdata;                                       // mm_interconnect_0:nios2_instruction_master_readdata -> nios2:i_readdata
 	wire         nios2_instruction_master_waitrequest;                                    // mm_interconnect_0:nios2_instruction_master_waitrequest -> nios2:i_waitrequest
 	wire  [25:0] nios2_instruction_master_address;                                        // nios2:i_address -> mm_interconnect_0:nios2_instruction_master_address
@@ -87,6 +101,10 @@ module system (
 	wire         mm_interconnect_0_i2c_0_avalon_slave_read;                               // mm_interconnect_0:i2c_0_avalon_slave_read -> i2c_0:read
 	wire         mm_interconnect_0_i2c_0_avalon_slave_write;                              // mm_interconnect_0:i2c_0_avalon_slave_write -> i2c_0:write
 	wire   [7:0] mm_interconnect_0_i2c_0_avalon_slave_writedata;                          // mm_interconnect_0:i2c_0_avalon_slave_writedata -> i2c_0:writedata
+	wire         mm_interconnect_0_lcd_sys_0_avalon_slave_0_waitrequest;                  // lcd_sys_0:as_wait_request -> mm_interconnect_0:lcd_sys_0_avalon_slave_0_waitrequest
+	wire   [2:0] mm_interconnect_0_lcd_sys_0_avalon_slave_0_address;                      // mm_interconnect_0:lcd_sys_0_avalon_slave_0_address -> lcd_sys_0:as_add
+	wire         mm_interconnect_0_lcd_sys_0_avalon_slave_0_write;                        // mm_interconnect_0:lcd_sys_0_avalon_slave_0_write -> lcd_sys_0:as_write
+	wire  [31:0] mm_interconnect_0_lcd_sys_0_avalon_slave_0_writedata;                    // mm_interconnect_0:lcd_sys_0_avalon_slave_0_writedata -> lcd_sys_0:as_wrdata
 	wire  [31:0] mm_interconnect_0_nios2_jtag_debug_module_readdata;                      // nios2:jtag_debug_module_readdata -> mm_interconnect_0:nios2_jtag_debug_module_readdata
 	wire         mm_interconnect_0_nios2_jtag_debug_module_waitrequest;                   // nios2:jtag_debug_module_waitrequest -> mm_interconnect_0:nios2_jtag_debug_module_waitrequest
 	wire         mm_interconnect_0_nios2_jtag_debug_module_debugaccess;                   // mm_interconnect_0:nios2_jtag_debug_module_debugaccess -> nios2:jtag_debug_module_debugaccess
@@ -97,7 +115,7 @@ module system (
 	wire  [31:0] mm_interconnect_0_nios2_jtag_debug_module_writedata;                     // mm_interconnect_0:nios2_jtag_debug_module_writedata -> nios2:jtag_debug_module_writedata
 	wire         irq_mapper_receiver0_irq;                                                // jtag_uart:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_d_irq_irq;                                                         // irq_mapper:sender_irq -> nios2:d_irq
-	wire         rst_controller_reset_out_reset;                                          // rst_controller:reset_out -> [camera_controller_0:nReset, cmos_sensor_output_generator_0:reset, i2c_0:reset, irq_mapper:reset, jtag_uart:rst_n, mm_interconnect_0:camera_controller_0_reset_reset_bridge_in_reset_reset, nios2:reset_n, rst_translator:in_reset, sdram:reset_n]
+	wire         rst_controller_reset_out_reset;                                          // rst_controller:reset_out -> [camera_controller_0:nReset, cmos_sensor_output_generator_0:reset, i2c_0:reset, irq_mapper:reset, jtag_uart:rst_n, lcd_sys_0:reset_n, mm_interconnect_0:camera_controller_0_reset_reset_bridge_in_reset_reset, nios2:reset_n, rst_translator:in_reset, sdram:reset_n]
 	wire         rst_controller_reset_out_reset_req;                                      // rst_controller:reset_req -> [nios2:reset_req, rst_translator:reset_req_in]
 	wire         rst_controller_001_reset_out_reset;                                      // rst_controller_001:reset_out -> clocks:ref_reset_reset
 
@@ -179,6 +197,29 @@ module system (
 		.av_irq         (irq_mapper_receiver0_irq)                                   //               irq.irq
 	);
 
+	LCD lcd_sys_0 (
+		.clk                 (clocks_sys_clk_clk),                                     //            clock.clk
+		.reset_n             (~rst_controller_reset_out_reset),                        //            reset.reset_n
+		.as_add              (mm_interconnect_0_lcd_sys_0_avalon_slave_0_address),     //   avalon_slave_0.address
+		.as_wait_request     (mm_interconnect_0_lcd_sys_0_avalon_slave_0_waitrequest), //                 .waitrequest
+		.as_wrdata           (mm_interconnect_0_lcd_sys_0_avalon_slave_0_writedata),   //                 .writedata
+		.as_write            (mm_interconnect_0_lcd_sys_0_avalon_slave_0_write),       //                 .write
+		.bus_read_data_valid (lcd_sys_0_bus_readdatavalid),                            //              bus.readdatavalid
+		.bus_waitReq         (lcd_sys_0_bus_waitrequest),                              //                 .waitrequest
+		.bus_read_data       (lcd_sys_0_bus_readdata),                                 //                 .readdata
+		.bus_read            (lcd_sys_0_bus_read),                                     //                 .read
+		.bus_add             (lcd_sys_0_bus_address),                                  //                 .address
+		.bus_BE              (lcd_sys_0_bus_byteenable),                               //                 .byteenable
+		.bus_burstCount      (lcd_sys_0_bus_burstcount),                               //                 .burstcount
+		.lcd_data            (lcd_conduit_lcd_data),                                   //      lcd_conduit.lcd_data
+		.lcd_dc              (lcd_conduit_lcd_dc),                                     //                 .lcd_dc
+		.lcd_rd              (lcd_conduit_lcd_rd),                                     //                 .lcd_rd
+		.lcd_wr              (lcd_conduit_lcd_wr),                                     //                 .lcd_wr
+		.lcd_reset_n         (lcd_conduit_lcd_reset_n),                                //                 .lcd_reset_n
+		.ext_IRQ             (lcd_controller_ext_irq),                                 // camera_interface.ext_irq
+		.am_readOK           (lcd_controller_am_readok)                                //                 .am_readok
+	);
+
 	system_nios2 nios2 (
 		.clk                                   (clocks_sys_clk_clk),                                    //                       clk.clk
 		.reset_n                               (~rst_controller_reset_out_reset),                       //                   reset_n.reset_n
@@ -244,6 +285,13 @@ module system (
 		.camera_controller_0_avalon_master_readdatavalid       (camera_controller_0_avalon_master_readdatavalid),                         //                                                .readdatavalid
 		.camera_controller_0_avalon_master_write               (camera_controller_0_avalon_master_write),                                 //                                                .write
 		.camera_controller_0_avalon_master_writedata           (camera_controller_0_avalon_master_writedata),                             //                                                .writedata
+		.lcd_sys_0_bus_address                                 (lcd_sys_0_bus_address),                                                   //                                   lcd_sys_0_bus.address
+		.lcd_sys_0_bus_waitrequest                             (lcd_sys_0_bus_waitrequest),                                               //                                                .waitrequest
+		.lcd_sys_0_bus_burstcount                              (lcd_sys_0_bus_burstcount),                                                //                                                .burstcount
+		.lcd_sys_0_bus_byteenable                              (lcd_sys_0_bus_byteenable),                                                //                                                .byteenable
+		.lcd_sys_0_bus_read                                    (lcd_sys_0_bus_read),                                                      //                                                .read
+		.lcd_sys_0_bus_readdata                                (lcd_sys_0_bus_readdata),                                                  //                                                .readdata
+		.lcd_sys_0_bus_readdatavalid                           (lcd_sys_0_bus_readdatavalid),                                             //                                                .readdatavalid
 		.nios2_data_master_address                             (nios2_data_master_address),                                               //                               nios2_data_master.address
 		.nios2_data_master_waitrequest                         (nios2_data_master_waitrequest),                                           //                                                .waitrequest
 		.nios2_data_master_byteenable                          (nios2_data_master_byteenable),                                            //                                                .byteenable
@@ -281,6 +329,10 @@ module system (
 		.jtag_uart_avalon_jtag_slave_writedata                 (mm_interconnect_0_jtag_uart_avalon_jtag_slave_writedata),                 //                                                .writedata
 		.jtag_uart_avalon_jtag_slave_waitrequest               (mm_interconnect_0_jtag_uart_avalon_jtag_slave_waitrequest),               //                                                .waitrequest
 		.jtag_uart_avalon_jtag_slave_chipselect                (mm_interconnect_0_jtag_uart_avalon_jtag_slave_chipselect),                //                                                .chipselect
+		.lcd_sys_0_avalon_slave_0_address                      (mm_interconnect_0_lcd_sys_0_avalon_slave_0_address),                      //                        lcd_sys_0_avalon_slave_0.address
+		.lcd_sys_0_avalon_slave_0_write                        (mm_interconnect_0_lcd_sys_0_avalon_slave_0_write),                        //                                                .write
+		.lcd_sys_0_avalon_slave_0_writedata                    (mm_interconnect_0_lcd_sys_0_avalon_slave_0_writedata),                    //                                                .writedata
+		.lcd_sys_0_avalon_slave_0_waitrequest                  (mm_interconnect_0_lcd_sys_0_avalon_slave_0_waitrequest),                  //                                                .waitrequest
 		.nios2_jtag_debug_module_address                       (mm_interconnect_0_nios2_jtag_debug_module_address),                       //                         nios2_jtag_debug_module.address
 		.nios2_jtag_debug_module_write                         (mm_interconnect_0_nios2_jtag_debug_module_write),                         //                                                .write
 		.nios2_jtag_debug_module_read                          (mm_interconnect_0_nios2_jtag_debug_module_read),                          //                                                .read

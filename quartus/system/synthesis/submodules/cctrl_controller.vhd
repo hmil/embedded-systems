@@ -8,6 +8,7 @@ ENTITY cctrl_controller IS
     nReset: in std_logic;
 
     BufferAddr: in std_logic_vector(31 downto 0);
+    FrameLength: in std_logic_vector(31 downto 0);
     WriteAddr: out std_logic_vector(31 downto 0);
     ReadAddr: out std_logic_vector(31 downto 0);
 
@@ -18,7 +19,8 @@ ENTITY cctrl_controller IS
     ReaderComplete: in std_logic; -- asserted when reader finished reading frame
     HasFrame: out std_logic;      -- asserted any time when a frame is available
 
-    clear_capture_n: out std_logic; -- clear capture devices (buffers and state machines)
+    reset_master_n: out std_logic;
+    reset_core_n: out std_logic;
     start_capture: out std_logic  -- start capture devices
   );
 END cctrl_controller;
@@ -30,20 +32,38 @@ architecture cctrl_controller of cctrl_controller is
   signal nextS: State;
 
 
-  signal buffer_nb: std_logic_vector(4 downto 0);
-  signal buffer_read: std_logic_vector(4 downto 0);
-  signal buffer_write: std_logic_vector(4 downto 0);
+  signal buffer_nb: std_logic_vector(1 downto 0);
+  signal buffer_read: std_logic_vector(1 downto 0);
+  signal next_buffer_read: std_logic_vector(1 downto 0);
+  signal buffer_write: std_logic_vector(1 downto 0);
+  signal next_buffer_write: std_logic_vector(1 downto 0);
 
   signal inc_write: std_logic;
 
-  signal frame_length: std_logic_vector(31 downto 0);
-
 begin
 
-  frame_length <= X"0003f480"; -- = 640 * 480 (VGA)
+  WriteAddr <= std_logic_vector(resize(unsigned(BufferAddr) + unsigned(FrameLength) * unsigned(buffer_write), 32));
+  ReadAddr  <= std_logic_vector(resize(unsigned(BufferAddr) + unsigned(FrameLength) * unsigned(buffer_read), 32));
 
-  WriteAddr <= std_logic_vector( resize(unsigned(BufferAddr) + unsigned(frame_length) * unsigned(buffer_write), 32));
-  ReadAddr  <= std_logic_vector( resize(unsigned(BufferAddr) + unsigned(frame_length) * unsigned(buffer_read), 32));
+  buffer_nb <= "10"; -- 3 - 1
+
+  process(buffer_read, buffer_nb)
+  begin
+    if buffer_read = buffer_nb then
+      next_buffer_read <= "00";
+    else
+      next_buffer_read <= std_logic_vector(unsigned(buffer_read) + 1);
+    end if;
+  end process;
+
+  process(buffer_write, buffer_nb)
+  begin
+    if buffer_write = buffer_nb then
+      next_buffer_write <= "00";
+    else
+      next_buffer_write <= std_logic_vector(unsigned(buffer_write) + 1);
+    end if;
+  end process;
 
   process(buffer_read, buffer_write)
   begin
@@ -65,22 +85,22 @@ begin
 
   buff_rd_counter : process(nReset, Clk)
   begin
-    if nReset = '1' then
+    if nReset = '0' then
       buffer_read <= (others => '0');
     elsif rising_edge(Clk) then
-      if ReaderComplete = '1' then
-        buffer_read <= std_logic_vector(unsigned(buffer_read) + 1);
+      if ReaderComplete = '1' and buffer_read /= buffer_write then
+        buffer_read <= next_buffer_read;
       end if;
     end if;
   end process;
 
   buff_wr_counter : process(Clk, nReset)
   begin
-    if nReset = '1' then
+    if nReset = '0' then
       buffer_write <= (others => '0');
     elsif rising_edge(Clk) then
       if inc_write = '1' then
-        buffer_write <= std_logic_vector(unsigned(buffer_write) + 1);
+        buffer_write <= next_buffer_write;
       end if;
     end if;
   end process;
@@ -89,7 +109,8 @@ begin
   state_rule : process(Start, FrameComplete, s, nReset)
   begin
     nextS <= s;
-    clear_capture_n <= nReset; -- Forward global reset by default
+    reset_master_n <= nReset; -- Forward global reset by default
+    reset_core_n <= nReset;
     start_capture <= '0';
     inc_write <= '0';
 
@@ -98,18 +119,20 @@ begin
       when Idle =>
         if Start = '1' then
           nextS <= StartCapture;
-          clear_capture_n <= '0';
+          reset_master_n <= '0';
+          reset_core_n <= '0';
         end if;
       when StartCapture =>
         start_capture <= '1';
         nextS <= Capturing;
       when Capturing =>
         if FrameComplete = '1' then
-          inc_write <= '1';
           nextS <= EndOfFrame;
         end if;
       when EndOfFrame =>
-        if unsigned(buffer_write) + 1 /= unsigned(buffer_read) then
+        if next_buffer_write /= buffer_read then
+          inc_write <= '1';
+          reset_core_n <= '0';
           nextS <= StartCapture;
         end if;
     end case;

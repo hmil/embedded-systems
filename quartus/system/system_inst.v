@@ -1,6 +1,11 @@
 	system u0 (
 		.camera_controller_current_frame     (<connected-to-camera_controller_current_frame>),     //       camera_controller.current_frame
 		.camera_controller_read_done         (<connected-to-camera_controller_read_done>),         //                        .read_done
+		.camera_input_clk                    (<connected-to-camera_input_clk>),                    //            camera_input.clk
+		.camera_input_frame_valid            (<connected-to-camera_input_frame_valid>),            //                        .frame_valid
+		.camera_input_line_valid             (<connected-to-camera_input_line_valid>),             //                        .line_valid
+		.camera_input_data                   (<connected-to-camera_input_data>),                   //                        .data
+		.camera_input_cam_reset_n            (<connected-to-camera_input_cam_reset_n>),            //                        .cam_reset_n
 		.clk_clk                             (<connected-to-clk_clk>),                             //                     clk.clk
 		.frame_rdy_irq                       (<connected-to-frame_rdy_irq>),                       //               frame_rdy.irq
 		.i2c_scl                             (<connected-to-i2c_scl>),                             //                     i2c.scl
@@ -18,10 +23,12 @@
 		.sensor_output_generator_frame_valid (<connected-to-sensor_output_generator_frame_valid>), // sensor_output_generator.frame_valid
 		.sensor_output_generator_line_valid  (<connected-to-sensor_output_generator_line_valid>),  //                        .line_valid
 		.sensor_output_generator_data        (<connected-to-sensor_output_generator_data>),        //                        .data
-		.camera_input_clk                    (<connected-to-camera_input_clk>),                    //            camera_input.clk
-		.camera_input_frame_valid            (<connected-to-camera_input_frame_valid>),            //                        .frame_valid
-		.camera_input_line_valid             (<connected-to-camera_input_line_valid>),             //                        .line_valid
-		.camera_input_data                   (<connected-to-camera_input_data>),                   //                        .data
-		.camera_input_cam_reset_n            (<connected-to-camera_input_cam_reset_n>)             //                        .cam_reset_n
+		.lcd_conduit_lcd_data                (<connected-to-lcd_conduit_lcd_data>),                //             lcd_conduit.lcd_data
+		.lcd_conduit_lcd_dc                  (<connected-to-lcd_conduit_lcd_dc>),                  //                        .lcd_dc
+		.lcd_conduit_lcd_rd                  (<connected-to-lcd_conduit_lcd_rd>),                  //                        .lcd_rd
+		.lcd_conduit_lcd_wr                  (<connected-to-lcd_conduit_lcd_wr>),                  //                        .lcd_wr
+		.lcd_conduit_lcd_reset_n             (<connected-to-lcd_conduit_lcd_reset_n>),             //                        .lcd_reset_n
+		.lcd_controller_ext_irq              (<connected-to-lcd_controller_ext_irq>),              //          lcd_controller.ext_irq
+		.lcd_controller_am_readok            (<connected-to-lcd_controller_am_readok>)             //                        .am_readok
 	);
 
